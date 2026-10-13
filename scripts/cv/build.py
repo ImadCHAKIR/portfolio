@@ -10,7 +10,7 @@ import re
 import shutil
 import sys
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'tmp/pdf-deps'))
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
@@ -28,9 +28,12 @@ args = parser.parse_args()
 for name, filename in [('Body', 'arial.ttf'), ('Bold', 'arialbd.ttf')]:
     pdfmetrics.registerFont(TTFont(name, str(Path(args.font_dir) / filename)))
 
-DATA = json.loads((ROOT / 'content/portfolio.json').read_text(encoding='utf-8'))
+DATA = {
+    key: json.loads((ROOT / 'src/content' / f'{key}.json').read_text(encoding='utf-8'))
+    for key in ['contact', 'en', 'fr', 'ar']
+}
 OUT = ROOT / 'output/pdf'
-WEB = ROOT / 'assets/cv'
+WEB = ROOT / 'public/cv'
 OUT.mkdir(parents=True, exist_ok=True)
 WEB.mkdir(parents=True, exist_ok=True)
 W, H = A4

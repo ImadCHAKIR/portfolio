@@ -1,0 +1,27 @@
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(52 245) scale(0.77)">
+  <path d="M-4 0v-70h8V0" fill="#718560"/>
+  <path d="m0-139-38 65h18l-27 33h94L20-74h18Z" fill="#839e75"/>
+  <path d="m0-139 0 98h47L20-74h18Z" fill="#759266"/>
+  </g>
+  <path d="M167 245V76h263v169" fill="#e5dac3" stroke="#9b9c7e" stroke-width="2"/>
+  <path d="M155 76h287V60H155Z" fill="#b5bd9c"/>
+  <path d="M194 61V44h210v17" fill="#d3c7ad"/>
+  <path d="M269 245v-61a30 30 0 0 1 60 0v61" fill="#879676"/>
+  <path d="M274 245v-60a25 25 0 0 1 50 0v60" fill="#344e44"/>
+  <g fill="#a5b598" stroke="#82977b" stroke-width="2">
+  <path d="M197 132v-21a15 15 0 0 1 30 0v21Z"/>
+  <path d="M250 132v-21a15 15 0 0 1 30 0v21Z"/>
+  <path d="M317 132v-21a15 15 0 0 1 30 0v21Z"/>
+  <path d="M370 132v-21a15 15 0 0 1 30 0v21Z"/>
+  <path d="M197 204v-21a15 15 0 0 1 30 0v21Z"/>
+  <path d="M370 204v-21a15 15 0 0 1 30 0v21Z"/>
+  </g>
+  <path d="M159 245h280" stroke="#667858" stroke-width="6"/>
+  <text x="298" y="54" text-anchor="middle" fill="#4f624d" font-family="monospace" font-size="12" letter-spacing="4">EMI</text>
+  <g transform="translate(497 245) scale(0.95)">
+  <path d="M-4 0v-70h8V0" fill="#718560"/>
+  <path d="m0-139-38 65h18l-27 33h94L20-74h18Z" fill="#839e75"/>
+  <path d="m0-139 0 98h47L20-74h18Z" fill="#759266"/>
+  </g>
+  </svg>

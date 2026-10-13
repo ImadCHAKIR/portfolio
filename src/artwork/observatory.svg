@@ -1,0 +1,19 @@
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
+  <path d="M126 245v-141h352v141" fill="#a8bda2" stroke="#6a8564" stroke-width="2"/>
+  <path d="M109 103h387V88H109Z" fill="#4c6d56"/>
+  <path d="M200 88V58m208 30V33" stroke="#66845d" stroke-width="5"/>
+  <circle cx="200" cy="51" r="9" fill="#d5e2ae" stroke="#66845d" stroke-width="3"/>
+  <circle cx="408" cy="26" r="9" fill="#d5e2ae" stroke="#66845d" stroke-width="3"/>
+  <path d="M186 28q-25 23 0 46m235-67q25 19 0 39" fill="none" stroke="#8faa7c" stroke-width="2"/>
+  <rect x="148" y="127" width="174" height="96" rx="3" fill="#263e36"/>
+  <path d="M160 202h150m-150-24h150m-150-24h150" stroke="#3c5c49"/>
+  <path d="m160 191 20-2 14-14 16 18 16-7 12-36 17 44 17-22 13 8 22-13" fill="none" stroke="#bad989" stroke-width="3"/>
+  <rect x="341" y="127" width="112" height="96" rx="3" fill="#263e36"/>
+  <path d="M358 200v-30m21 30v-45m21 45v-28m21 28v-55m20 55v-39" stroke="#9cbc77" stroke-width="10"/>
+  <text x="299" y="100" text-anchor="middle" fill="#e5eed7" font-family="monospace" font-size="9" letter-spacing="3">OBSERVE / UNDERSTAND</text>
+  <g transform="translate(535 245) scale(0.82)">
+  <path d="M-4 0v-70h8V0" fill="#718560"/>
+  <path d="m0-139-38 65h18l-27 33h94L20-74h18Z" fill="#839e75"/>
+  <path d="m0-139 0 98h47L20-74h18Z" fill="#759266"/>
+  </g>
+  </svg>

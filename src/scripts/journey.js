@@ -1,0 +1,141 @@
+'use strict';
+
+(() => {
+  const experience = document.querySelector('#journey');
+  if (!experience) return;
+  const data = JSON.parse(document.querySelector('#journey-data').textContent);
+  const chapters = data.chapters;
+  const stage = document.querySelector('#journey-stage');
+  const track = document.querySelector('#world-track');
+  const avatar = document.querySelector('#journey-avatar');
+  const previous = document.querySelector('#journey-prev');
+  const next = document.querySelector('#journey-next');
+  const chapterNav = document.querySelector('#chapter-nav');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const localize = value => data.dir === 'rtl' ? String(value).replace(/\(?[A-Za-z0-9.][A-Za-z0-9 .#/+*()–_-]*/g, match => {
+    const token = match.replace(/[ .]+$/, '');
+    return '\u2066' + token + '\u2069' + match.slice(token.length);
+  }) : value;
+
+  let position = 0;
+  let target = 0;
+  let activeChapter = -1;
+  let frameId = 0;
+  let lastTime = 0;
+  let drag = null;
+  let wheelTimer = 0;
+  const clamp = value => Math.max(0, Math.min(chapters.length - 1, value));
+  chapters.forEach((chapter, index) => {
+    const button = document.createElement('button');
+    button.textContent = chapter.label;
+    button.setAttribute('aria-label', `${data.ui.goChapter} ${index + 1}: ${chapter.label}`);
+    button.addEventListener('click', () => moveTo(index));
+    chapterNav.append(button);
+  });
+
+  // Paint the current chapter and synchronize navigation, links, and the URL.
+  function render() {
+    track.style.transform = `translate3d(${-position * stage.clientWidth}px, 0, 0)`;
+    stage.querySelector('.mountain-one').style.transform = `translateX(${-position * 28}px)`;
+    stage.querySelector('.cloud-one').style.transform = `translateX(${-position * 12}px)`;
+    const index = Math.round(position);
+    if (index === activeChapter) return;
+    activeChapter = index;
+    const chapter = chapters[index];
+    document.querySelector('#chapter-kicker').textContent = localize(`${String(index + 1).padStart(2, '0')} / ${chapter.kicker}`);
+    document.querySelector('#chapter-title').textContent = localize(chapter.title);
+    document.querySelector('#chapter-description').textContent = localize(chapter.description);
+    document.querySelector('#world-sign').textContent = localize(chapter.sign);
+    document.querySelector('#chapter-count').textContent = `${String(index + 1).padStart(2, '0')} / 06`;
+    document.querySelector('#chapter-tags').replaceChildren(...chapter.tags.map(tag => {
+      const span = document.createElement('span');
+      const bdi = document.createElement('bdi');
+      bdi.textContent = tag;
+      span.append(bdi);
+      return span;
+    }));
+    const link = document.querySelector('#chapter-link');
+    link.href = data.home + chapter.link;
+    link.textContent = `${index === 5 ? data.ui.email : data.ui.readMore} ↗`;
+    chapterNav.querySelectorAll('button').forEach((button, i) => {
+      if (i === index) button.setAttribute('aria-current', 'step');
+      else button.removeAttribute('aria-current');
+    });
+    previous.disabled = index === 0;
+    next.disabled = index === chapters.length - 1;
+    try { history.replaceState(null, '', `#chapter-${index + 1}`); } catch { /* Some file viewers restrict history. */ }
+  }
+
+  // Interpolate the scenery position; reduced motion jumps to the destination.
+  function animate(time) {
+    frameId = 0;
+    if (document.hidden) { avatar.classList.remove('is-moving'); return; }
+    const dt = Math.min(time - (lastTime || time - 16), 64);
+    lastTime = time;
+    const distance = target - position;
+    position = reducedMotion.matches ? target : position + distance * (1 - Math.exp(-dt / 140));
+    if (Math.abs(target - position) < .001) position = target;
+    avatar.style.scale = distance < -.002 ? '-1 1' : distance > .002 ? '1 1' : avatar.style.scale;
+    avatar.classList.toggle('is-moving', Math.abs(target - position) > .005 && !reducedMotion.matches);
+    render();
+    if (position !== target) frameId = requestAnimationFrame(animate);
+    else { avatar.classList.remove('is-moving'); lastTime = 0; }
+  }
+  function moveTo(value) {
+    clearTimeout(wheelTimer);
+    target = clamp(value);
+    if (!frameId) frameId = requestAnimationFrame(animate);
+  }
+  // Buttons, keyboard, wheel, and touch all use the same moveTo entry point.
+  previous.addEventListener('click', () => moveTo(Math.round(target) - 1));
+  next.addEventListener('click', () => moveTo(Math.round(target) + 1));
+  experience.addEventListener('keydown', event => {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    const moves = { ArrowRight: 1, ArrowDown: 1, PageDown: 1, ArrowLeft: -1, ArrowUp: -1, PageUp: -1 };
+    if (Object.hasOwn(moves, event.key)) {
+      event.preventDefault();
+      if (!event.repeat) moveTo(Math.round(target) + moves[event.key]);
+    } else if (event.key === 'Home' || event.key === 'End') {
+      event.preventDefault();
+      moveTo(event.key === 'Home' ? 0 : chapters.length - 1);
+    }
+  });
+  stage.addEventListener('wheel', event => {
+    if (event.ctrlKey) return;
+    event.preventDefault();
+    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? stage.clientWidth : 1;
+    const delta = (Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY) * unit;
+    if (!delta) return;
+    moveTo(target + delta / 650);
+    wheelTimer = setTimeout(() => moveTo(delta > 0 ? Math.ceil(target) : Math.floor(target)), 220);
+  }, { passive: false });
+  stage.addEventListener('pointerdown', event => {
+    if (event.button !== 0) return;
+    clearTimeout(wheelTimer);
+    drag = { x: event.clientX, target, id: event.pointerId };
+    stage.setPointerCapture(event.pointerId);
+  });
+  stage.addEventListener('pointermove', event => {
+    if (drag && event.pointerId === drag.id) moveTo(drag.target + (drag.x - event.clientX) / stage.clientWidth);
+  });
+  stage.addEventListener('pointerup', event => {
+    if (!drag || event.pointerId !== drag.id) return;
+    const distance = drag.x - event.clientX;
+    moveTo(Math.abs(distance) > 35 ? Math.round(drag.target) + Math.sign(distance) : Math.round(target));
+    drag = null;
+    if (stage.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId);
+  });
+  stage.addEventListener('pointercancel', () => { drag = null; moveTo(Math.round(target)); });
+  window.addEventListener('resize', render);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(frameId); frameId = 0; lastTime = 0; avatar.classList.remove('is-moving'); }
+    else if (position !== target) moveTo(target);
+  });
+  reducedMotion.addEventListener('change', () => moveTo(target));
+  const initialChapter = /^#chapter-([1-6])$/.exec(location.hash);
+  position = target = initialChapter ? Number(initialChapter[1]) - 1 : 0;
+  experience.hidden = false;
+  document.querySelector('.journey-transcript').open = false;
+  render();
+  stage.focus({ preventScroll: true });
+})();

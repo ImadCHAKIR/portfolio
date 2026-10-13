@@ -1,14 +1,31 @@
-import { mkdir, copyFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
+import { mkdir, copyFile, realpath, rm } from 'node:fs/promises';
 import path from 'node:path';
-import './build-pages.mjs';
-import { publicFiles } from './public-files.mjs';
+import { buildAssets } from './build-assets.mjs';
+import { buildPages } from './build-pages.mjs';
+import { root, distDir, isMain } from './lib/paths.mjs';
+import { publicFiles } from './lib/public-files.mjs';
 
-const root = fileURLToPath(new URL('..', import.meta.url));
-const files = publicFiles;
-for (const file of files) {
-  const output = path.join(root, 'dist', file);
-  await mkdir(path.dirname(output), { recursive: true });
-  await copyFile(path.join(root, file), output);
+export async function buildSite() {
+  await buildAssets();
+  await buildPages();
+
+  // Remove only the generated output directory, never a redirected/junction path.
+  const resolvedRoot = await realpath(root);
+  const resolvedDist = await realpath(distDir).catch(error => {
+    if (error.code !== 'ENOENT') throw error;
+    return path.join(resolvedRoot, 'dist');
+  });
+  if (resolvedDist !== path.join(resolvedRoot, 'dist')) {
+    throw new Error('Refusing to clean a dist directory outside this project.');
+  }
+  await rm(distDir, { recursive: true, force: true });
+
+  for (const filename of publicFiles) {
+    const output = path.join(distDir, filename);
+    await mkdir(path.dirname(output), { recursive: true });
+    await copyFile(path.join(root, filename), output);
+  }
+  console.log(`Built ${publicFiles.length} public files in the repository root and dist/.`);
 }
-console.log(`Built ${files.length} static files in dist/`);
+
+if (isMain(import.meta.url)) await buildSite();

@@ -1,0 +1,397 @@
+/* Journey: a standalone, directly linkable page. */
+.journey-page {
+  background: #f7f9fa;
+}
+
+.journey-main {
+  padding-block: 30px 50px;
+}
+
+.back-link {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.journey-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-block: 20px 30px;
+}
+
+.journey-heading h1 {
+  font-size: 32px;
+  letter-spacing: -.7px;
+  font-weight: 600;
+}
+
+.journey-heading p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.journey-heading .button {
+  flex-shrink: 0;
+}
+
+.journey-experience {
+  background: white;
+  border: 1px solid #cedbcf;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.journey-stage {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  background: #dce9df;
+  touch-action: pan-y;
+  isolation: isolate;
+  outline-offset: -5px;
+}
+
+.journey-sky {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.journey-sun {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  right: 14%;
+  top: 32px;
+  background: #e8d69a;
+  border-radius: 50%;
+  box-shadow: 0 0 0 12px #e8d69a30;
+}
+
+.cloud {
+  position: absolute;
+  width: 85px;
+  height: 18px;
+  background: #f4f7ec;
+  border-radius: 20px;
+}
+
+.cloud:before {
+  content: '';
+  position: absolute;
+  background: inherit;
+  width: 35px;
+  height: 28px;
+  border-radius: 50%;
+  bottom: 5px;
+  left: 15px;
+}
+
+.cloud-one {
+  left: 10%;
+  top: 56px;
+}
+
+.cloud-two {
+  left: 57%;
+  top: 37px;
+  transform: scale(.7);
+}
+
+.mountain {
+  position: absolute;
+  bottom: 25px;
+  width: 470px;
+  height: 195px;
+  background: #c0d3bf;
+  clip-path: polygon(0 100%,30% 25%,48% 53%,65% 0,100% 100%);
+}
+
+.mountain-one {
+  left: 5%;
+}
+
+.mountain-two {
+  right: -10%;
+  height: 240px;
+  background: #cbd9c6;
+}
+
+.world-track {
+  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: 38px;
+  width: 600%;
+  height: calc(100% - 35px);
+  will-change: transform;
+}
+
+.world-zone {
+  width: calc(100% / 6);
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.world-zone>svg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 91%;
+  width: auto;
+  max-width: 70%;
+  overflow: visible;
+}
+
+.world-zone-label {
+  position: absolute;
+  top: 23px;
+  left: 5%;
+  font-size: 10px;
+  letter-spacing: .8px;
+  color: #526748;
+}
+
+.world-zone-label[dir="rtl"] {
+  letter-spacing: 0;
+}
+
+.journey-ground {
+  position: absolute;
+  height: 38px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: repeating-linear-gradient(90deg,transparent 0,transparent 47px,#576c4318 48px,#576c4318 49px),#9aaf80;
+  border-top: 8px solid #6f8a57;
+}
+
+.journey-ground:after {
+  content: '';
+  display: block;
+  height: 4px;
+  background: #c5d6aa;
+  margin-top: 3px;
+}
+
+.journey-avatar {
+  position: absolute;
+  bottom: 36px;
+  width: 48px;
+  height: 70px;
+  left: 21%;
+  transform-origin: center;
+  filter: drop-shadow(3px 4px 0 #263a2920);
+}
+
+.journey-avatar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.journey-avatar.is-moving {
+  animation: walk-bob .18s infinite alternate;
+}
+
+.journey-avatar.is-moving .avatar-leg-left {
+  animation: walk-leg .18s infinite alternate;
+  transform-origin: 20px 56px;
+}
+
+.journey-avatar.is-moving .avatar-leg-right {
+  animation: walk-leg .18s infinite alternate-reverse;
+  transform-origin: 29px 56px;
+}
+
+.world-sign {
+  position: absolute;
+  right: 25px;
+  bottom: 58px;
+  background: #f7f5e9;
+  border: 2px solid #91a181;
+  color: #526548;
+  padding: 7px 12px;
+  font-size: 10px;
+  box-shadow: 4px 4px 0 #516f4120;
+}
+
+.world-sign:after {
+  content: '';
+  width: 5px;
+  height: 24px;
+  background: #91a181;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+}
+
+.journey-panel {
+  display: grid;
+  grid-template-columns: 1fr 205px;
+  gap: 35px;
+  padding: 27px 30px;
+  min-height: 280px;
+}
+
+.chapter-copy>.eyebrow {
+  font-size: 10px;
+  margin-bottom: 9px;
+}
+
+.chapter-copy h2 {
+  font-size: 26px;
+  letter-spacing: -.5px;
+  margin-bottom: 13px;
+  font-weight: 600;
+}
+
+.chapter-copy>p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.chapter-copy .text-link {
+  margin-top: 19px;
+  font-size: 12px;
+}
+
+.journey-progress {
+  border-inline-start: 1px solid var(--line);
+  padding-inline-start: 25px;
+}
+
+.chapter-count {
+  font: 11px 'Courier New',monospace;
+  color: var(--accent);
+}
+
+#chapter-nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 13px;
+  gap: 3px;
+}
+
+#chapter-nav button {
+  text-align: start;
+  background: none;
+  border: 0;
+  padding: 7px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+#chapter-nav button:before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: #cbd4c0;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+#chapter-nav button[aria-current="step"] {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+#chapter-nav button[aria-current="step"]:before {
+  background: #789841;
+  box-shadow: 0 0 0 3px #dce7c9;
+}
+
+.journey-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 30px;
+  border-top: 1px solid var(--line);
+  background: #f7f9f5;
+}
+
+.journey-controls p {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.journey-controls>div {
+  display: flex;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.journey-controls button {
+  width: 45px;
+  height: 39px;
+  background: var(--ink);
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.journey-transcript {
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.journey-transcript summary {
+  cursor: pointer;
+  padding-block: 10px;
+  font-weight: 600;
+}
+
+.journey-transcript>div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.journey-transcript article {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.journey-transcript article h2 {
+  margin-block: 10px;
+  font-size: 19px;
+  color: var(--ink);
+}
+
+.journey-transcript .text-link {
+  margin-top: 15px;
+}
+
+.no-js {
+  padding: 15px;
+  border: 1px solid var(--line);
+}
+
+@keyframes walk-bob {
+  to {
+    margin-bottom: 3px;
+  }
+
+}
+
+@keyframes walk-leg {
+  to {
+    transform: rotate(14deg);
+  }
+
+}

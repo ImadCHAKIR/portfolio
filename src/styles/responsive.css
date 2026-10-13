@@ -1,0 +1,596 @@
+@media(max-width: 950px) {
+  .shell {
+    width: calc(100% - 48px);
+  }
+
+  .header-inner {
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 17px;
+    font-size: 12px;
+  }
+
+  .wordmark {
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .language-switch a {
+    padding: 6px 7px;
+  }
+
+  .hero {
+    gap: 35px;
+    padding-top: 60px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-role {
+    font-size: 24px;
+  }
+
+  .focus-panel {
+    padding: 23px;
+  }
+
+  .experience-row {
+    grid-template-columns: 185px 1fr;
+    gap: 27px;
+  }
+
+  .about-grid {
+    gap: 35px;
+  }
+
+  .journey-stage {
+    height: 300px;
+  }
+
+}
+
+@media(max-width: 760px) {
+  .header-inner {
+    flex-wrap: wrap;
+    padding-block: 13px;
+    min-height: 75px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .js-ready .nav-links {
+    display: none;
+  }
+
+  .js-ready .nav-links.is-open {
+    display: flex;
+    padding-block: 12px 5px;
+  }
+
+  .menu-toggle:not([hidden]) {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 33px;
+    padding-block: 50px 32px;
+  }
+
+  .hero-intro {
+    max-width: 620px;
+  }
+
+  .focus-panel {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .hero-role {
+    font-size: 26px;
+  }
+
+  .journey-invite {
+    padding: 22px;
+    gap: 22px;
+  }
+
+  .journey-invite .text-link {
+    max-width: 180px;
+    flex-shrink: 1;
+  }
+
+  .section {
+    padding-block: 57px;
+  }
+
+  .section-heading {
+    gap: 18px;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .experience-row {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .experience-company {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .experience-company .date {
+    margin: 0;
+  }
+
+  .project-grid {
+    gap: 17px;
+  }
+
+  .project-card {
+    padding: 22px;
+  }
+
+  .project-card h3 {
+    font-size: 19px;
+  }
+
+  .project-card>p {
+    font-size: 13px;
+  }
+
+  .project-top .eyebrow {
+    font-size: 9px;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .languages {
+    padding: 0;
+    border: 0;
+  }
+
+  .languages dl {
+    display: flex;
+    gap: 22px;
+  }
+
+  .languages dl>div {
+    flex: 1;
+  }
+
+  .contact-section {
+    padding-block: 57px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-actions {
+    justify-self: start;
+  }
+
+  .journey-heading h1 {
+    font-size: 27px;
+  }
+
+  .journey-heading {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .journey-heading .button {
+    font-size: 11px;
+    padding: 10px 13px;
+    gap: 12px;
+  }
+
+  .journey-stage {
+    height: 270px;
+  }
+
+  .journey-panel {
+    grid-template-columns: 1fr 165px;
+    gap: 24px;
+    padding: 23px;
+  }
+
+  .journey-progress {
+    padding-inline-start: 18px;
+  }
+
+  .chapter-copy h2 {
+    font-size: 23px;
+  }
+
+  .chapter-copy>p:not(.eyebrow) {
+    font-size: 13px;
+  }
+
+  .journey-controls {
+    padding-inline: 23px;
+  }
+
+}
+
+@media(max-width: 500px) {
+  .shell {
+    width: calc(100% - 36px);
+  }
+
+  .header-inner {
+    gap: 10px;
+  }
+
+  .wordmark {
+    font-size: 12px;
+    gap: 7px;
+  }
+
+  .monogram {
+    font-size: 27px;
+  }
+
+  .header-controls {
+    gap: 8px;
+  }
+
+  .language-switch {
+    gap: 0;
+    font-size: 10px;
+  }
+
+  .language-switch a {
+    padding: 5px 6px;
+  }
+
+  .menu-toggle {
+    padding: 4px 8px;
+    min-height: 33px;
+  }
+
+  .menu-toggle>span:first-child {
+    position: absolute;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .nav-links {
+    font-size: 12px;
+    gap: 20px;
+  }
+
+  .hero {
+    padding-top: 38px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    letter-spacing: -1.6px;
+  }
+
+  .hero-role {
+    font-size: 23px;
+    margin-top: 9px;
+  }
+
+  .hero-intro {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  .button {
+    font-size: 12px;
+    padding: 11px 16px;
+    gap: 17px;
+  }
+
+  .journey-invite {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .journey-invite h2 {
+    font-size: 15px;
+  }
+
+  .journey-invite p {
+    font-size: 12px;
+  }
+
+  .journey-invite .text-link {
+    max-width: none;
+    font-size: 12px;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+  .section-heading p:not(.section-number) {
+    font-size: 13px;
+  }
+
+  .experience-company {
+    display: block;
+  }
+
+  .experience-company h3 {
+    font-size: 17px;
+  }
+
+  .experience-company .date {
+    margin-top: 7px;
+  }
+
+  .experience-body h4 {
+    font-size: 15px;
+  }
+
+  .experience-body ul {
+    font-size: 13px;
+  }
+
+  .tags {
+    gap: 6px;
+  }
+
+  .tags span {
+    font-size: 9px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 23px;
+  }
+
+  .project-card h3 {
+    font-size: 20px;
+  }
+
+  .project-card>p {
+    font-size: 14px;
+  }
+
+  .skill-grid {
+    gap: 25px 20px;
+  }
+
+  .skill-group h3 {
+    font-size: 15px;
+  }
+
+  .skill-group p {
+    font-size: 12px;
+  }
+
+  .education h3 {
+    font-size: 17px;
+  }
+
+  .languages dl {
+    gap: 15px;
+  }
+
+  .languages dt {
+    font-size: 13px;
+  }
+
+  .languages dd {
+    font-size: 11px;
+  }
+
+  .contact-section h2 {
+    font-size: 28px;
+  }
+
+  .email-link {
+    font-size: 17px;
+  }
+
+  .site-footer {
+    font-size: 10px;
+    gap: 15px;
+  }
+
+  .journey-main {
+    padding-top: 22px;
+  }
+
+  .journey-heading {
+    display: block;
+    margin-top: 18px;
+  }
+
+  .journey-heading h1 {
+    font-size: 26px;
+  }
+
+  .journey-heading .button {
+    margin-top: 17px;
+  }
+
+  .journey-heading p {
+    font-size: 13px;
+  }
+
+  .journey-stage {
+    height: 245px;
+  }
+
+  .world-zone>svg {
+    max-width: 100%;
+    height: 82%;
+    left: 57%;
+  }
+
+  .world-zone-label {
+    font-size: 9px;
+    top: 19px;
+    left: 15px;
+  }
+
+  .journey-avatar {
+    left: 14%;
+    width: 37px;
+    height: 55px;
+  }
+
+  .world-sign {
+    right: 14px;
+    bottom: 56px;
+    font-size: 8px;
+    padding: 6px 8px;
+  }
+
+  .journey-sun {
+    width: 50px;
+    height: 50px;
+    right: 12%;
+  }
+
+  .journey-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 23px;
+    min-height: 0;
+  }
+
+  .chapter-copy h2 {
+    font-size: 23px;
+  }
+
+  .chapter-copy>.eyebrow {
+    font-size: 9px;
+  }
+
+  .chapter-copy .text-link {
+    font-size: 11px;
+  }
+
+  .journey-progress {
+    border: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  }
+
+  .chapter-count {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  #chapter-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    gap: 6px;
+    margin: 0;
+  }
+
+  #chapter-nav button {
+    font-size: 0;
+    padding: 12px 6px;
+    min-width: 24px;
+  }
+
+  #chapter-nav button:before {
+    width: 7px;
+    height: 7px;
+  }
+
+  .journey-controls {
+    padding: 14px 20px;
+    align-items: center;
+  }
+
+  .journey-controls p {
+    font-size: 10px;
+    max-width: 165px;
+  }
+
+  .journey-controls button {
+    width: 39px;
+    height: 39px;
+  }
+
+  .journey-transcript>div {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media(max-width: 360px) {
+  .shell {
+    width: calc(100% - 28px);
+  }
+
+  .wordmark {
+    font-size: 11px;
+  }
+
+  .language-switch a {
+    padding: 5px;
+  }
+
+  .header-controls {
+    gap: 5px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-role {
+    font-size: 21px;
+  }
+
+  .hero-actions {
+    gap: 8px;
+  }
+
+  .hero-actions .button {
+    font-size: 11px;
+    padding-inline: 12px;
+    gap: 13px;
+  }
+
+  .nav-links {
+    gap: 14px;
+    font-size: 11px;
+  }
+
+}

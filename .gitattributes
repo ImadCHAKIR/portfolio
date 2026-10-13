@@ -1,0 +1,12 @@
+# The source is in src/ and public/. These copies support GitHub Pages on main.
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.svg text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+/*.html linguist-generated=true
+/assets/** linguist-generated=true
+/archive/** linguist-vendored=true

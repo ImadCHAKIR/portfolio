@@ -5,8 +5,10 @@
   "description": "Imad Chakir's portfolio and optional interactive resume",
   "scripts": {
     "dev": "node scripts/serve.mjs",
-    "check": "node --check assets/js/main.js && node --check assets/js/journey.js && node scripts/check.mjs",
+    "check": "node --check src/scripts/main.js && node --check src/scripts/journey.js && node --test tests/site.test.mjs tests/server.test.mjs",
+    "test": "npm run check",
     "build": "node scripts/build.mjs",
-    "pages": "node scripts/build-pages.mjs"
+    "pages": "node scripts/build-pages.mjs",
+    "cv": "python scripts/cv/build.py"
   }
 }

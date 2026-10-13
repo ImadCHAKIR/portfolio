@@ -1,0 +1,36 @@
+'use strict';
+
+// All content and language navigation remain usable without JavaScript.
+document.documentElement.classList.add('js-ready');
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#nav-links');
+menuButton.hidden = false;
+const closeMenu = () => {
+  menuButton.setAttribute('aria-expanded', 'false');
+  navigation.classList.remove('is-open');
+};
+menuButton.addEventListener('click', () => {
+  const expanded = menuButton.getAttribute('aria-expanded') !== 'true';
+  menuButton.setAttribute('aria-expanded', String(expanded));
+  navigation.classList.toggle('is-open', expanded);
+});
+navigation.addEventListener('click', event => {
+  if (event.target.closest('a')) closeMenu();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+    closeMenu();
+    menuButton.focus();
+  }
+});
+document.addEventListener('click', event => {
+  if (!event.target.closest('.header-inner')) closeMenu();
+});
+matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+
+// Preserve the current résumé section when switching between static locales.
+document.querySelectorAll('.language-switch a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (location.hash) link.hash = location.hash;
+  });
+});

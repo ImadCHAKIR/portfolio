@@ -1,0 +1,101 @@
+@media(prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *:before, *:after {
+    animation: none!important;
+    transition: none!important;
+  }
+
+}
+
+@media print {
+  @page {
+    margin: 15mm;
+  }
+
+  .site-header, .skip-link, .hero-actions, .download-note, .focus-panel, .journey-invite, .contact-actions, .site-footer, .journey-experience, .back-link, .journey-heading .button {
+    display: none!important;
+  }
+
+  body {
+    color: #111;
+    background: white;
+    font-size: 10pt;
+  }
+
+  .shell {
+    width: 100%;
+  }
+
+  .hero {
+    display: block;
+    padding: 0 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 25pt;
+  }
+
+  .hero-role {
+    font-size: 14pt;
+  }
+
+  .hero-intro {
+    font-size: 10pt;
+  }
+
+  .section, .contact-section {
+    padding-block: 18px;
+  }
+
+  .section-heading {
+    margin-bottom: 15px;
+  }
+
+  .section-heading h2 {
+    font-size: 17pt;
+  }
+
+  .section-heading p:not(.section-number) {
+    display: none;
+  }
+
+  .experience-row {
+    break-inside: avoid;
+    grid-template-columns: 150px 1fr;
+    padding-block: 14px;
+    gap: 20px;
+  }
+
+  .experience-body ul, .project-card>p, .skill-group p {
+    font-size: 9pt;
+  }
+
+  .projects-section, .about-section {
+    background: none;
+  }
+
+  .project-card {
+    break-inside: avoid;
+    padding: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 12pt;
+  }
+
+  .tags span {
+    font-size: 7pt;
+  }
+
+  .skill-group {
+    break-inside: avoid;
+  }
+
+  .contact-section h2, .contact-section .eyebrow {
+    display: none;
+  }
+
+}

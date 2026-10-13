@@ -1,0 +1,354 @@
+{
+  "dir": "ltr",
+  "title": "Software Engineer",
+  "specialties": "Backend development · DevOps · QA automation",
+  "location": "Rabat, Morocco",
+  "intro": "I build reliable software, automate testing, and make complex systems easier to monitor. My experience spans backend APIs, payment platforms, and cloud operations.",
+  "summary": "Software engineer with a background in Computer Engineering and Digitalization from EMI. Hands-on experience in backend development, DevOps, observability, QA automation, and payment platforms. Contributed to API development, monitoring migrations, test automation, and enterprise customer support at Oracle. Focused on reliable, maintainable solutions and collaborative delivery in Agile teams.",
+  "ui": {
+    "nav": "Main navigation",
+    "skip": "Skip to content",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "about": "Education & languages",
+    "contact": "Contact",
+    "language": "Language",
+    "menu": "Menu",
+    "download": "Download CV",
+    "pdf": "PDF · 2 pages",
+    "viewProjects": "View projects",
+    "email": "Get in touch",
+    "focus": "What I work on",
+    "focus1": "Backend systems & APIs",
+    "focus2": "DevOps & observability",
+    "focus3": "Quality & test automation",
+    "journey": "Interactive journey",
+    "journeyIntro": "Explore my background through a short illustrated experience.",
+    "openJourney": "Explore the journey",
+    "experienceIntro": "Engineering experience across enterprise systems and application development.",
+    "projectsIntro": "A selection of applications built across finance, voice interfaces, and machine learning.",
+    "skillsIntro": "Tools and technologies used in development, testing, and operations.",
+    "education": "Education",
+    "languages": "Languages",
+    "aboutIntro": "An engineering foundation, with a practical approach to building software.",
+    "contactTitle": "Let’s talk about your next project.",
+    "contactIntro": "For software engineering opportunities, collaboration, or a conversation about what you’re building.",
+    "footer": "Software engineering. Built with care.",
+    "top": "Back to top",
+    "back": "Back to portfolio",
+    "journeyTitle": "My engineering journey",
+    "journeySubtitle": "From the first foundations to building reliable systems.",
+    "instructions": "Use ← / →, scroll over the scene, or swipe to explore.",
+    "previous": "Previous chapter",
+    "next": "Next chapter",
+    "chapters": "Journey chapters",
+    "stage": "Interactive career world. Use left and right arrow keys to explore.",
+    "readMore": "Read more in the portfolio",
+    "noJs": "Enable JavaScript for the interactive scene, or read the complete journey below.",
+    "story": "The complete journey",
+    "overview": "Professional profile",
+    "toolkit": "Technical skills",
+    "selectedProjects": "Selected projects",
+    "cvRole": "Software Engineer | DevOps | QA Automation",
+    "page": "Page",
+    "goChapter": "Go to chapter",
+    "siteDescription": "Imad Chakir, software engineer in Rabat. Experience, projects, technical skills, an interactive journey, and a downloadable CV."
+  },
+  "experience": [
+    {
+      "company": "Oracle",
+      "role": "APIGW Team · Observability",
+      "date": "",
+      "bullets": [
+        "Migrated the team’s monitoring solution from Elasticsearch- and Prometheus-based tooling to Oracle’s internal Telemetry services.",
+        "Developed scripts for metric collection and data streaming into Telemetry for ingestion, monitoring, and analysis.",
+        "Created Grafana dashboards and alarms to improve operational visibility and incident detection."
+      ],
+      "tags": [
+        "Telemetry",
+        "Grafana",
+        "Prometheus",
+        "Automation"
+      ]
+    },
+    {
+      "company": "Oracle",
+      "role": "Payment Team · APIs & QA automation",
+      "date": "",
+      "bullets": [
+        "Automated API and platform testing with Selenium, Rest Assured, and Appium to expand validation coverage and reduce manual testing effort.",
+        "Contributed to APIs for payment request validation and payment gateway integration; worked across multiple payment methods and transaction flows.",
+        "Supported enterprise payment customers and built lightweight internal tools to simplify testing workflows and API understanding.",
+        "Contributed to early design and implementation work with Redis and Kafka to evaluate support for increasing transaction volumes."
+      ],
+      "tags": [
+        "Selenium",
+        "Rest Assured",
+        "Appium",
+        "Redis",
+        "Kafka"
+      ]
+    },
+    {
+      "company": "ANFCC",
+      "role": "Development & Maintenance Intern",
+      "date": "Jul–Aug 2023 · Rabat",
+      "bullets": [
+        "Worked on web and mobile applications in an Agile environment, from planning and design to implementation and testing.",
+        "Used C#, Ionic, Postman, IIS, SQL Server, Python, UML, and Figma."
+      ],
+      "tags": [
+        "C#",
+        "Ionic",
+        "SQL Server"
+      ]
+    },
+    {
+      "company": "Cheikh Zaid Foundation",
+      "role": "IT Services Intern",
+      "date": "Jul–Aug 2022 · Rabat",
+      "bullets": [
+        "Contributed to a web and mobile application with chatbot support, from planning and modeling through development and testing.",
+        "Developed practical skills in software design, collaboration, and the full development lifecycle."
+      ],
+      "tags": [
+        "Web & mobile",
+        "Chatbots",
+        "Software design"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Investment Portfolio Platform",
+      "type": "Full-stack · Finance",
+      "description": "Built an investment management platform supporting portfolio monitoring, recommendations, performance and risk evaluation, and tax reporting.",
+      "tech": [
+        "Power BI",
+        "Python",
+        "MySQL",
+        "Microsoft Azure",
+        "OAuth",
+        "C#",
+        "Angular",
+        ".NET"
+      ],
+      "tags": [
+        "Angular",
+        ".NET",
+        "Python",
+        "Azure"
+      ]
+    },
+    {
+      "name": "Voice-enabled Weather",
+      "type": "Web application · Voice",
+      "description": "Developed a weather application supporting both typed and voice-based queries, combining web services and speech recognition.",
+      "tech": [
+        "Angular",
+        "Spring",
+        "Node-RED",
+        "Express.js",
+        "MySQL",
+        "Tailwind",
+        "Java",
+        "ActiveMQ",
+        "Mosquitto",
+        "Whisper"
+      ],
+      "tags": [
+        "Angular",
+        "Spring",
+        "Whisper",
+        "Node-RED"
+      ]
+    },
+    {
+      "name": "Facial Expression Recognition",
+      "type": "Machine learning · Desktop",
+      "description": "Developed a desktop application for real-time emotion detection from images, videos, and live streams using the FER2013 dataset.",
+      "tech": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "OpenCV",
+        "FER2013"
+      ],
+      "tags": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "OpenCV"
+      ]
+    },
+    {
+      "name": "Article Sharing Platform",
+      "type": "Full-stack · Content",
+      "description": "Built a full-stack article platform with account creation, chatbot support, and article generation through web scraping.",
+      "tech": [
+        "React",
+        "Spring",
+        "MongoDB",
+        "Express.js",
+        "Python",
+        "Dialogflow"
+      ],
+      "tags": [
+        "React",
+        "Spring",
+        "MongoDB",
+        "Dialogflow"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "label": "Programming",
+      "items": "Python, Java, C#, JavaScript, Bash, SQL"
+    },
+    {
+      "label": "Backend & APIs",
+      "items": "Spring Boot, ASP.NET / .NET, Node.js, Express.js, REST APIs, Rest Assured"
+    },
+    {
+      "label": "DevOps & cloud",
+      "items": "Docker, Terraform, Ansible, Jenkins, GitLab CI/CD, Linux"
+    },
+    {
+      "label": "Observability",
+      "items": "Grafana, Prometheus, Telemetry, monitoring dashboards, alarms"
+    },
+    {
+      "label": "Testing & QA",
+      "items": "Selenium, Appium, Postman, API automation, platform testing"
+    },
+    {
+      "label": "Data & tools",
+      "items": "MySQL, PostgreSQL, MongoDB, Redis, Kafka, Git, Jira, IntelliJ, Power BI"
+    }
+  ],
+  "education": [
+    {
+      "name": "Mohammadia School of Engineers (EMI)",
+      "date": "2021–2024",
+      "description": "Engineering degree in Computer Engineering and Digitalization.",
+      "location": "Rabat, Morocco"
+    },
+    {
+      "name": "Preparatory Classes · Mathematics & Physics",
+      "date": "2019–2021",
+      "description": "MPSI and MP* studies.",
+      "location": "Rabat & Agadir, Morocco"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Arabic",
+      "level": "Native"
+    },
+    {
+      "name": "French",
+      "level": "Upper-intermediate · B2"
+    },
+    {
+      "name": "English",
+      "level": "Upper-intermediate · B2"
+    }
+  ],
+  "chapters": [
+    {
+      "label": "The foundation",
+      "kicker": "LEARN · 2019–2024",
+      "title": "A foundation in problem solving.",
+      "description": "From MPSI and MP* preparatory classes (2019–2021) to Computer Engineering and Digitalization at EMI in Rabat (2021–2024). Mathematics, systems thinking, and the curiosity to keep building.",
+      "tags": [
+        "EMI",
+        "Computer Engineering",
+        "Mathematics & Physics"
+      ],
+      "sign": "EMI / RABAT",
+      "link": "#about",
+      "scene": "campus"
+    },
+    {
+      "label": "The first builds",
+      "kicker": "BUILD · 2022–2023",
+      "title": "From the classroom to a team.",
+      "description": "At Cheikh Zaid Foundation in 2022, I contributed to a web and mobile app with a chatbot. At ANFCC in 2023, I worked across planning, design, development, and testing in an Agile team.",
+      "tags": [
+        "C#",
+        "Ionic",
+        "SQL Server"
+      ],
+      "sign": "FIRST BUILDS",
+      "link": "#experience",
+      "scene": "workshop"
+    },
+    {
+      "label": "The project lab",
+      "kicker": "EXPERIMENT · SELECTED PROJECTS",
+      "title": "Different problems. New possibilities.",
+      "description": "An investment platform, voice-enabled weather forecasts, real-time facial expression recognition, and an article platform with chatbot support. Four ways to turn an idea into working software.",
+      "tags": [
+        "Angular & React",
+        "Python",
+        "Spring & .NET"
+      ],
+      "sign": "PROJECT LAB",
+      "link": "#projects",
+      "scene": "projects"
+    },
+    {
+      "label": "The payment network",
+      "kicker": "CONNECT · ORACLE PAYMENT TEAM",
+      "title": "Confidence in every transaction.",
+      "description": "API and platform automation, payment validation and gateway APIs, enterprise customer support, and internal testing tools. Early work with Redis and Kafka to explore scale.",
+      "tags": [
+        "API automation",
+        "Payments",
+        "Redis",
+        "Kafka"
+      ],
+      "sign": "PAYMENTS",
+      "link": "#experience",
+      "scene": "payments"
+    },
+    {
+      "label": "The observatory",
+      "kicker": "OBSERVE · ORACLE APIGW TEAM",
+      "title": "Make the invisible visible.",
+      "description": "A monitoring migration to Oracle’s internal Telemetry services. Metric collection and streaming scripts, Grafana dashboards, and alarms to improve operational visibility.",
+      "tags": [
+        "Grafana",
+        "Telemetry",
+        "Monitoring"
+      ],
+      "sign": "OBSERVABILITY",
+      "link": "#experience",
+      "scene": "observatory"
+    },
+    {
+      "label": "The next chapter",
+      "kicker": "WHAT’S NEXT?",
+      "title": "Let’s build the next chapter.",
+      "description": "Software engineering, DevOps, and QA automation, with a focus on reliable, maintainable systems. Based in Rabat, Morocco. Have a project or an opportunity in mind? Let’s talk.",
+      "tags": [
+        "Software engineering",
+        "DevOps",
+        "QA automation"
+      ],
+      "sign": "SAY HELLO",
+      "link": "#contact",
+      "scene": "launch"
+    }
+  ],
+  "sceneLabels": [
+    "EMI",
+    "BUILD / TEST / LEARN",
+    "PROJECTS",
+    "PAYMENT NETWORK",
+    "OBSERVE / UNDERSTAND",
+    "HELLO"
+  ]
+}

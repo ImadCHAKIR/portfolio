@@ -1,62 +1,88 @@
 # Imad Chakir — Portfolio
 
-A simple, responsive portfolio in English, French, and Arabic, with downloadable two-page CVs and an optional illustrated journey on its own page. Built with semantic HTML, CSS, local SVG artwork, and vanilla JavaScript. Arabic includes right-to-left layouts and support for mixed Arabic and technical terminology.
+A portfolio in English, French, and Arabic, with downloadable CVs and an optional interactive journey. Plain HTML, CSS, and JavaScript; no framework or JavaScript dependencies.
 
-## Run locally
+## Start here
 
-Open `index.html` directly, or use Node.js 18 or newer:
+Requires Node.js 18 or newer.
 
 ```sh
 npm run dev
 ```
 
-Visit http://localhost:4173. The local server binds to localhost and serves only public website files. Set `PORT` to use a different port. No JavaScript dependencies need installing.
+Open http://localhost:4173. The command builds the site and starts a local server. After editing a source file, run `npm run build` in another terminal and refresh the browser. There is no automatic rebuild watcher.
+
+Already-generated pages also work by opening `index.html` directly.
+
+## Project structure
+
+```text
+src/                         Editable website source
+  content/
+    contact.json             Shared name, email, and profile links
+    en.json                  English content and interface labels
+    fr.json                  French content and interface labels
+    ar.json                  Arabic content and interface labels
+  templates/
+    portfolio.mjs            Assembles the main portfolio page
+    portfolio-sections.mjs   Hero, experience, projects, skills, and contact
+    journey.mjs              Journey page and accessible text transcript
+    layout.mjs               Shared document head, navigation, and footer
+    context.mjs              HTML escaping and Arabic text direction
+    scenery.mjs              Inserts and translates the SVG illustrations
+  styles/                    Base, navigation, portfolio, journey, responsive, print
+  scripts/                   Mobile menu and interactive journey controls
+  artwork/                   Original SVG scenes and avatar
+  config.mjs                 Languages, public URLs, and stylesheet order
+public/                      Original downloadable files and favicon
+  cv/                        English, French, and Arabic PDFs
+  img/                       Favicon
+scripts/                     Build and local-server commands
+  lib/                       Content loading, paths, and public-file manifest
+  cv/                        Python CV generator and its requirements
+tests/                      Automated content, build, and HTTP checks
+docs/                       Architecture and CV editing guides
+archive/original-template/  Unused images retained from the old portfolio
+```
+
+The six HTML files and `assets/` in the repository root are **generated deployment files**. Keep them committed because GitHub Pages currently serves the root of `main`. Edit `src/` or `public/`, then rebuild; direct edits to generated files will be overwritten. `dist/` is a clean copy containing only the 13 public website files.
+
+## Where to make changes
+
+| Change | Edit |
+| --- | --- |
+| Experience, projects, skills, education, or translations | `src/content/en.json`, `fr.json`, and `ar.json` |
+| Email, name, LinkedIn, or GitHub | `src/content/contact.json` |
+| Page layout or sections | `src/templates/` |
+| Colors, typography, or spacing | `src/styles/` |
+| Navigation or journey behavior | `src/scripts/` |
+| Illustrated journey scenes | `src/artwork/` |
+| CV layout or generation | `scripts/cv/build.py`; see [the CV guide](docs/cv.md) |
+
+## Commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Build and start the local server on port 4173 |
+| `npm run build` | Regenerate root HTML/assets and rebuild `dist/` |
+| `npm run check` | Check syntax, translations, links, generated output, PDFs, and HTTP paths |
+| `npm test` | Alias for `npm run check` |
+| `npm run pages` | Regenerate HTML only after a template or text change |
+| `npm run cv` | Regenerate the three PDFs; requires Python dependencies |
+
+Before pushing changes to GitHub:
 
 ```sh
+npm run build
 npm run check
-npm run build
 ```
 
-The build regenerates all six HTML pages and copies the 13 public files into `dist/`. That directory is ready for a static host. Asset paths also work under a repository subpath. Building does not publish the website.
+Commit the source edits **and** updated root HTML/assets together. The current GitHub Pages branch/root setup and `/portfolio/` URLs do not need to change. Building does not push or publish anything. If a browser shows an older design after deployment, use Ctrl+Shift+R.
 
-## Editing and translation
+See [architecture and development](docs/architecture.md) for the build flow and [CV generation](docs/cv.md) for Python setup.
 
-- `content/portfolio.json`: shared English, French, and Arabic content for the website and CVs, including interface labels, experience, projects, skills, education, and journey chapters.
-- `scripts/build-pages.mjs`: generates `index.html`, `fr.html`, `ar.html`, and the three `journey*.html` pages. Run `npm run pages` after editing content, or `npm run build` to prepare the complete site.
-- `assets/css/styles.css`: professional layout, responsive styles, RTL support, original journey artwork styling, and print layout.
-- `assets/js/main.js`: mobile navigation and language links that preserve the current section.
-- `assets/js/journey.js`: original SVG scenes, chapter navigation, and keyboard, pointer, and scroll controls.
+## Content and credits
 
-The language switch links to fully translated pages. Main content and CV downloads work without JavaScript. Each language downloads its matching CV from `assets/cv/`. Email links open the visitor's mail application; the site does not collect messages or personal data.
+The supplied CV is the content source. EMI dates are 2021–2024; Oracle roles remain undated because dates were not supplied. No performance metrics or project repository URLs have been invented.
 
-## Regenerate the CVs
-
-The PDF generator uses Python, Arial fonts, and the packages listed in `scripts/requirements-cv.txt`:
-
-```sh
-python -m pip install -r scripts/requirements-cv.txt
-python scripts/build-cv.py
-npm run build
-```
-
-Windows fonts default to `C:/Windows/Fonts`. On another system, supply `--font-dir PATH` pointing to a directory containing `arial.ttf` and `arialbd.ttf`.
-
-The generator creates `output/pdf/Imad-Chakir-CV-EN.pdf`, `-FR.pdf`, and `-AR.pdf`, then copies them into `assets/cv/` for downloading. It checks that each CV has two pages, readable text, and no page overflow. Arabic uses shaped glyphs with logical Unicode text embedded for compatible PDF readers. Rebuilding HTML alone does not regenerate the PDFs, so regenerate both after changing CV content. Review rendered pages after substantive edits.
-
-## Interactive journey
-
-Choose **Explore my journey** to open a separate page. Use arrow keys, Page Up/Page Down, scroll over the scene, swipe/drag horizontally, chapter selectors, or Previous/Next buttons. Home and End jump to the first and last chapters. **Back to portfolio** returns to the main page; chapter links open the relevant portfolio section.
-
-The journey respects reduced motion, pauses when hidden, and stores the current chapter in the URL. Switching languages preserves that chapter. A text version of all six chapters is available below the interactive experience and remains available without JavaScript.
-
-## Checks and content provenance
-
-`npm run check` validates JavaScript syntax, translated content structure, EMI dates, page language and direction, PDF download targets, and local links including section anchors. The implementation was also checked in a browser at desktop and mobile widths, and all three PDFs were visually reviewed.
-
-Content is based on the supplied two-page CV. EMI dates are 2021–2024, as clarified by Imad. Oracle roles remain undated because dates were not supplied. No performance metrics, project repository URLs, or proficiency percentages have been invented. The GitHub profile comes from the previous portfolio; personal email and LinkedIn come from the CV.
-
-The optional exploration takes conceptual inspiration from [Robby Leonardi's interactive résumé](https://www.rleonardi.com/interactive-resume/). The implementation, scenes, and character artwork are original.
-
-## Hosting
-
-`.openai/hosting.json` records a private, unpublished Sites project and its static output directory. The existing GitHub remote is preserved. `.sites-publish/` is ignored staging material and is not needed for local development. Unreferenced original template photos are retained locally but excluded from the build.
+The journey takes conceptual inspiration from [Robby Leonardi's interactive résumé](https://www.rleonardi.com/interactive-resume/). The implementation, SVG scenery, and character artwork are original. All six chapters have a text transcript, and animation respects reduced motion.
