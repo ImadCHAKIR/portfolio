@@ -1,0 +1,6 @@
+dist/
+node_modules/
+.sites-publish/
+tmp/
+output/
+__pycache__/

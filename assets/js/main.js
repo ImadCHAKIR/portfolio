@@ -1,56 +1,36 @@
-/*===== MENU SHOW =====*/ 
-const showMenu = (toggleId, navId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+'use strict';
 
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-            nav.classList.toggle('show')
-        })
-    }
-}
-showMenu('nav-toggle','nav-menu')
-
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
-
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll('section[id]')
-
-function scrollActive(){
-    const scrollY = window.pageYOffset
-
-    sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight
-        const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
-
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
-        }
-    })
-}
-window.addEventListener('scroll', scrollActive)
-
-/*===== SCROLL REVEAL ANIMATION =====*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2000,
-    delay: 200,
-//     reset: true
+// All content and language navigation remain usable without JavaScript.
+document.documentElement.classList.add('js-ready');
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#nav-links');
+menuButton.hidden = false;
+const closeMenu = () => {
+  menuButton.setAttribute('aria-expanded', 'false');
+  navigation.classList.remove('is-open');
+};
+menuButton.addEventListener('click', () => {
+  const expanded = menuButton.getAttribute('aria-expanded') !== 'true';
+  menuButton.setAttribute('aria-expanded', String(expanded));
+  navigation.classList.toggle('is-open', expanded);
 });
+navigation.addEventListener('click', event => {
+  if (event.target.closest('a')) closeMenu();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+    closeMenu();
+    menuButton.focus();
+  }
+});
+document.addEventListener('click', event => {
+  if (!event.target.closest('.header-inner')) closeMenu();
+});
+matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
 
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
-sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+// Preserve the current résumé section when switching between static locales.
+document.querySelectorAll('.language-switch a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (location.hash) link.hash = location.hash;
+  });
+});

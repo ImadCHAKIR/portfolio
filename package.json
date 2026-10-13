@@ -1,0 +1,12 @@
+{
+  "name": "imad-chakir-portfolio",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Imad Chakir's portfolio and optional interactive resume",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node --check assets/js/main.js && node --check assets/js/journey.js && node scripts/check.mjs",
+    "build": "node scripts/build.mjs",
+    "pages": "node scripts/build-pages.mjs"
+  }
+}
