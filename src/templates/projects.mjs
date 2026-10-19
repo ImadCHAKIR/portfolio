@@ -43,12 +43,35 @@ const conceptScenes = {
 };
 
 function renderWorkVisual(work, ui, esc) {
+  const visualAssets = {
+    observability: {
+      path: 'assets/img/work-observability-real.png',
+      alt: 'Grafana dashboard screenshot showing website performance metrics',
+      kind: 'real'
+    },
+    payments: {
+      path: 'assets/img/work-payments-real.png',
+      alt: 'Photo of a card payment terminal processing a transaction',
+      kind: 'real'
+    },
+    applications: {
+      path: 'assets/img/work-applications.svg',
+      alt: 'Sanitized responsive web and mobile application mockup',
+      kind: 'illustrative'
+    },
+    chatbot: {
+      path: 'assets/img/work-cheikh-zaid-real.png',
+      alt: 'Screenshot of the Cheikh Zaid Foundation web and mobile care portal',
+      kind: 'real'
+    }
+  };
+  const asset = visualAssets[work.visual];
   const scene = conceptScenes[work.visual] || conceptScenes.applications;
   return `<div class="project-visual">
-    <div class="project-visual-window visual-${work.visual}" aria-hidden="true">${scene}</div>
+    <div class="project-visual-window visual-${work.visual}${asset ? ' project-image-window' : ''}">${asset ? `<img class="project-visual-image" src="${asset.path}" alt="${esc(asset.alt)}" loading="lazy">` : scene}</div>
     <div class="project-visual-caption">
       <span>${esc(ui.visualPreview)}</span>
-      <p>${esc(ui.screenshotHint)}</p>
+      <p>${esc(asset?.kind === 'real' ? ui.referenceHint : ui.screenshotHint)}</p>
     </div>
   </div>`;
 }

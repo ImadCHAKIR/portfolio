@@ -4,6 +4,10 @@ import { locales, home, journey, cv } from '../../src/config.mjs';
 export const staticAssets = [
   { source: 'img/favicon.svg', output: 'assets/img/favicon.svg' },
   { source: 'img/imad-chakir.png', output: 'assets/img/imad-chakir.png' },
+  { source: 'img/work-observability-real.png', output: 'assets/img/work-observability-real.png' },
+  { source: 'img/work-payments-real.png', output: 'assets/img/work-payments-real.png' },
+  { source: 'img/work-applications.svg', output: 'assets/img/work-applications.svg' },
+  { source: 'img/work-cheikh-zaid-real.png', output: 'assets/img/work-cheikh-zaid-real.png' },
   ...locales.map(lang => ({
     source: `cv/Imad-Chakir-CV-${lang.toUpperCase()}.pdf`,
     output: cv(lang)

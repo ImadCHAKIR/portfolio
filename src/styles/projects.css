@@ -171,6 +171,22 @@ html[dir="rtl"] .project-rail-next svg {
   background: linear-gradient(145deg, #edf4f1, #f6f7f3 64%, #e8f0eb);
 }
 
+.project-image-window {
+  padding: 0;
+  background: #172b38;
+}
+
+.project-visual-image {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.visual-chatbot .project-visual-image {
+  object-position: top;
+}
+
 .project-visual-caption {
   display: flex;
   align-items: baseline;
@@ -277,6 +293,10 @@ html[dir="rtl"] .project-rail-next svg {
 
   .project-visual-window {
     min-height: 170px;
+  }
+
+  .project-visual-image {
+    height: 200px;
   }
 
   .case-study-grid {
