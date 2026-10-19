@@ -36,6 +36,9 @@
     "visualPreview": "Project visual",
     "screenshotHint": "Sanitized mockup · not an internal screenshot.",
     "referenceHint": "Real-world reference image · not an internal capture.",
+    "providedScreenshotHint": "Provided project screenshots · demo environment.",
+    "browser": "Browser",
+    "android": "Android",
     "evidenceHint": "These visuals illustrate the project context. Add shareable project screenshots or diagrams and verified results when available.",
     "skillsIntro": "Tools and technologies used in development, testing, and operations.",
     "education": "Education",
@@ -63,6 +66,8 @@
     "page": "Page",
     "goChapter": "Go to chapter",
     "siteDescription": "Imad Chakir, software engineer in Rabat. Experience, projects, technical skills, an interactive journey, and a downloadable CV.",
+    "authTitle": "ANFCC Authenticator",
+    "openPrototype": "Open prototype",
     "featuredWork": "Featured professional work",
     "additionalProjects": "Additional projects",
     "previousProjects": "Previous projects",
@@ -268,13 +273,8 @@
       "challenge": "Contribute across the lifecycle of web and mobile application development in an Agile team.",
       "contribution": "Worked across planning, design, implementation, and testing.",
       "approach": "C#, Ionic, Postman, IIS, SQL Server, Python, UML, and Figma.",
-      "evidence": "Add the application name, your specific module, a screenshot you can share, and a concrete result.",
-      "tags": [
-        "C#",
-        "Ionic",
-        "SQL Server",
-        "Figma"
-      ]
+      "evidence": "Browser and Android screenshots show the two-factor authentication flow in the demo environment.",
+      "tags": ["C#", "Ionic", "SQL Server", "Figma"]
     },
     {
       "name": "Cheikh Zaid Foundation · Web & mobile app",

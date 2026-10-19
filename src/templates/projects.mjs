@@ -55,9 +55,19 @@ function renderWorkVisual(work, ui, esc) {
       kind: 'real'
     },
     applications: {
-      path: 'assets/img/work-applications.svg',
-      alt: 'Sanitized responsive web and mobile application mockup',
-      kind: 'illustrative'
+      images: [
+        {
+          path: 'assets/img/work-anfcc-browser.png',
+          alt: 'ANCFCC Portal browser screenshot showing the two-factor authentication code entry screen',
+          label: 'browser'
+        },
+        {
+          path: 'assets/img/work-anfcc-android.jpg',
+          alt: 'ANCFCC Authenticator Android screenshot showing the current verification code',
+          label: 'android'
+        }
+      ],
+      kind: 'provided'
     },
     chatbot: {
       path: 'assets/img/work-cheikh-zaid-real.png',
@@ -67,17 +77,23 @@ function renderWorkVisual(work, ui, esc) {
   };
   const asset = visualAssets[work.visual];
   const scene = conceptScenes[work.visual] || conceptScenes.applications;
+  const imageMarkup = asset?.images
+    ? `<div class="project-visual-gallery" role="group" aria-label="${esc(ui.visualPreview)}">${asset.images.map(image => `<figure class="project-visual-frame"><img class="project-visual-image" src="${image.path}" alt="${esc(image.alt)}" loading="lazy" decoding="async"><figcaption>${esc(ui[image.label])}</figcaption></figure>`).join('')}</div>`
+    : asset ? `<img class="project-visual-image" src="${asset.path}" alt="${esc(asset.alt)}" loading="lazy" decoding="async">` : scene;
+  const windowClass = asset?.images ? ' project-gallery-window' : asset ? ' project-image-window' : '';
+  const hint = asset?.kind === 'provided' ? ui.providedScreenshotHint : asset?.kind === 'real' ? ui.referenceHint : ui.screenshotHint;
   return `<div class="project-visual">
-    <div class="project-visual-window visual-${work.visual}${asset ? ' project-image-window' : ''}">${asset ? `<img class="project-visual-image" src="${asset.path}" alt="${esc(asset.alt)}" loading="lazy">` : scene}</div>
+    <div class="project-visual-window visual-${work.visual}${windowClass}">${imageMarkup}</div>
     <div class="project-visual-caption">
       <span>${esc(ui.visualPreview)}</span>
-      <p>${esc(asset?.kind === 'real' ? ui.referenceHint : ui.screenshotHint)}</p>
+      <p>${esc(hint)}</p>
     </div>
   </div>`;
 }
 
 function renderWorkCard(work, index, { ui, esc, tags }) {
   const date = work.date ? `<span> · ${esc(work.date)}</span>` : '';
+  const prototypeLink = work.prototype ? `<a class="button button-secondary project-prototype-link" href="${work.prototype}">${esc(ui.openPrototype)} <span aria-hidden="true">↗</span></a>` : '';
   return `<article class="work-card">
     ${renderWorkVisual(work, ui, esc)}
     <div class="work-card-content">
@@ -89,6 +105,7 @@ function renderWorkCard(work, index, { ui, esc, tags }) {
       <h4>${esc(work.name)}</h4>
       <p class="work-role">${esc(work.role)}${date}</p>
       <p class="work-description">${esc(work.description)}</p>
+      ${prototypeLink}
       <div class="case-study-grid">
         <section><h5>${esc(ui.challenge)}</h5><p>${esc(work.challenge)}</p></section>
         <section><h5>${esc(ui.contribution)}</h5><p>${esc(work.contribution)}</p></section>

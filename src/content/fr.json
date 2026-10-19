@@ -36,6 +36,9 @@
     "visualPreview": "Visuel du projet",
     "screenshotHint": "Maquette anonymisée · pas une capture interne.",
     "referenceHint": "Image de référence réelle · pas une capture interne.",
+    "providedScreenshotHint": "Captures fournies du projet · environnement de démonstration.",
+    "browser": "Navigateur",
+    "android": "Android",
     "evidenceHint": "Ces visuels illustrent le contexte du projet. Ajoutez des captures ou schémas partageables et des résultats vérifiés lorsque possible.",
     "skillsIntro": "Les outils et technologies utilisés en développement, en test et en exploitation.",
     "education": "Formation",
@@ -63,6 +66,8 @@
     "page": "Page",
     "goChapter": "Aller au chapitre",
     "siteDescription": "Imad Chakir, ingénieur logiciel à Rabat. Expérience, projets, compétences, parcours interactif et CV à télécharger.",
+    "authTitle": "ANFCC Authenticator",
+    "openPrototype": "Ouvrir le prototype",
     "featuredWork": "Expériences professionnelles sélectionnées",
     "additionalProjects": "Autres projets",
     "previousProjects": "Projets précédents",
@@ -268,13 +273,8 @@
       "challenge": "Contribuer au cycle de développement d’applications web et mobiles au sein d’une équipe Agile.",
       "contribution": "Participation à la planification, à la conception, à l’implémentation et aux tests.",
       "approach": "C#, Ionic, Postman, IIS, SQL Server, Python, UML et Figma.",
-      "evidence": "Ajouter le nom de l’application, votre module, une capture partageable et un résultat concret.",
-      "tags": [
-        "C#",
-        "Ionic",
-        "SQL Server",
-        "Figma"
-      ]
+      "evidence": "Les captures navigateur et Android montrent le parcours d’authentification à deux facteurs dans l’environnement de démonstration.",
+      "tags": ["C#", "Ionic", "SQL Server", "Figma"]
     },
     {
       "name": "Fondation Cheikh Zaid · Application web et mobile",
