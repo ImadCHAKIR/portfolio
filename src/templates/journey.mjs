@@ -43,6 +43,7 @@ export function renderJourney(context) {
         ${esc(ui.download)} <span aria-hidden="true">↓</span>
       </a>
     </div>
+    <div class="journey-scroll" id="journey-scroll" style="--chapter-count: ${content.chapters.length}">
     <div class="journey-experience" id="journey" hidden>
       <div class="journey-stage" id="journey-stage" tabindex="0" dir="ltr"
            aria-label="${esc(ui.stage)}" aria-describedby="journey-instructions">
@@ -68,6 +69,7 @@ export function renderJourney(context) {
         </div>
         <div class="journey-progress">
           <span class="chapter-count" id="chapter-count" dir="ltr">01 / 06</span>
+          <div class="journey-progress-meter" aria-hidden="true"><span id="journey-progress-meter"></span></div>
           <nav id="chapter-nav" aria-label="${esc(ui.chapters)}"></nav>
         </div>
       </div>
@@ -78,6 +80,7 @@ export function renderJourney(context) {
           <button id="journey-next" aria-label="${esc(ui.next)}">→</button>
         </div>
       </div>
+    </div>
     </div>
     <noscript><p class="no-js">${esc(ui.noJs)}</p></noscript>
     ${renderTranscript(context)}

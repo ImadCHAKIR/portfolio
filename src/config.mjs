@@ -12,6 +12,8 @@ export const stylesheets = [
   'base',
   'navigation',
   'portfolio',
+  'projects',
+  'chatbot',
   'journey',
   'responsive',
   'accessibility'

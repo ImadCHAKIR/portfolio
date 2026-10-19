@@ -1,4 +1,5 @@
 import { locales, names, shortNames, home, journey } from '../config.mjs';
+import { renderChatbot } from './chatbot.mjs';
 
 export function head(context, isJourney) {
   const { lang, content, esc } = context;
@@ -15,6 +16,7 @@ export function head(context, isJourney) {
   <link rel="stylesheet" href="assets/css/styles.css">
   ${locales.map(code => `<link rel="alternate" hreflang="${code}" href="${isJourney ? journey(code) : home(code)}">`).join('\n  ')}
   <script src="assets/js/main.js" defer></script>
+  <script type="module" src="assets/js/chatbot.mjs"></script>
   ${isJourney ? '<script src="assets/js/journey.js" defer></script>' : ''}
 </head>`;
 }
@@ -39,5 +41,6 @@ export function header(context, isJourney) {
 
 export function footer(context, isJourney = false) {
   const { lang, content, contact, esc } = context;
-  return `<footer class="site-footer shell"><p><bdi>© ${contact.name}</bdi> · ${esc(content.location)}</p><a href="${isJourney ? home(lang) : '#home'}">${esc(isJourney ? content.ui.back : content.ui.top)} <span aria-hidden="true">${isJourney ? '↗' : '↑'}</span></a></footer>`;
+  return `<footer class="site-footer shell"><p><bdi>© ${contact.name}</bdi> · ${esc(content.location)}</p><a href="${isJourney ? home(lang) : '#home'}">${esc(isJourney ? content.ui.back : content.ui.top)} <span aria-hidden="true">${isJourney ? '↗' : '↑'}</span></a></footer>
+  ${renderChatbot(context)}`;
 }

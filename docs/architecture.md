@@ -4,7 +4,7 @@
 
 1. `src/config.mjs` defines the three languages and public page paths.
 2. `src/content/en.json` shows the content schema; French and Arabic use the same keys.
-3. `src/templates/portfolio.mjs` shows how a page is assembled. `portfolio-sections.mjs` contains its sections.
+3. `src/templates/portfolio.mjs` shows how a page is assembled. `portfolio-sections.mjs` contains the main CV sections, while `projects.mjs` renders featured case studies and additional projects.
 4. `scripts/build.mjs` coordinates page rendering, asset preparation, and packaging.
 5. `tests/` verifies the generated website and its behavior under a repository subpath.
 
@@ -38,11 +38,11 @@ When changing factual information, update all three locale files and regenerate 
 
 ## Styles and browser scripts
 
-Stylesheets are concatenated in the order listed in `src/config.mjs`. Keep responsive and accessibility/print overrides last. The browser receives one stylesheet.
+Stylesheets are concatenated in the order listed in `src/config.mjs`. Project-card styling lives in `src/styles/projects.css`; shared portfolio styles live in `portfolio.css`. Keep responsive and accessibility/print overrides last. The browser receives one stylesheet.
 
 Browser scripts are copied without bundling or minification, keeping them easy to debug. They are classic deferred scripts so the built site can still be opened from disk. SVG scenes are inserted at build time; `src/scripts/journey.js` manages only navigation, animation, and input.
 
-The main portfolio works without JavaScript. The journey reveals an interactive scene when JavaScript runs and otherwise offers the full text transcript.
+The main portfolio works without JavaScript. The journey reveals a sticky, scroll-driven scene when JavaScript runs: the page scroll position becomes a continuous position along the six-scene world, while arrow buttons, chapter links, and swipe input use the same navigation function. Without JavaScript, the scroll rail collapses and the full text transcript remains available.
 
 ## Local development
 

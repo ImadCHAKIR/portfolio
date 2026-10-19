@@ -1,6 +1,6 @@
 import { names, journey, cv } from '../config.mjs';
 
-function sectionHeading(number, key, title, description) {
+export function sectionHeading(number, key, title, description) {
   return `<div class="section-heading">
     <p class="section-number" aria-hidden="true">${number}</p>
     <div>
@@ -18,12 +18,6 @@ function profileLinks(contact) {
 }
 
 export function renderIntroduction({ lang, content, ui, contact, esc }) {
-  const focusItems = [ui.focus1, ui.focus2, ui.focus3].map((item, index) => `
-    <li>
-      <span class="focus-number" aria-hidden="true">0${index + 1}</span>
-      <span>${esc(item)}</span>
-    </li>`).join('');
-
   return `<section class="hero shell" id="home" aria-labelledby="hero-title">
     <div class="hero-copy">
       <p class="eyebrow">${esc(content.location)}</p>
@@ -37,12 +31,11 @@ export function renderIntroduction({ lang, content, ui, contact, esc }) {
         <a class="button secondary" href="#projects">${esc(ui.viewProjects)}</a>
       </div>
       <p class="download-note">${esc(ui.pdf)} · ${names[lang]}</p>
-    </div>
-    <aside class="focus-panel" aria-labelledby="focus-title">
-      <h2 id="focus-title">${esc(ui.focus)}</h2>
-      <ul>${focusItems}</ul>
       ${profileLinks(contact)}
-    </aside>
+    </div>
+    <figure class="hero-portrait">
+      <img src="assets/img/imad-chakir.png" alt="${esc(ui.portraitAlt)}" width="800" height="800" fetchpriority="high" decoding="async">
+    </figure>
   </section>
   <aside class="journey-invite shell">
     <div>
@@ -72,26 +65,6 @@ export function renderExperience({ content, ui, esc, tags }) {
   return `<section class="section shell" id="experience" aria-labelledby="experience-title">
     ${sectionHeading('01', 'experience', esc(ui.experience), esc(ui.experienceIntro))}
     <div class="experience-list">${items}</div>
-  </section>`;
-}
-
-export function renderProjects({ content, ui, esc, tags }) {
-  const items = content.projects.map((item, index) => `
-    <article class="project-card">
-      <div class="project-top">
-        <p class="eyebrow">${esc(item.type)}</p>
-        <span aria-hidden="true">0${index + 1}</span>
-      </div>
-      <h3>${esc(item.name)}</h3>
-      <p>${esc(item.description)}</p>
-      ${tags(item.tags)}
-    </article>`).join('');
-
-  return `<section class="projects-section" id="projects" aria-labelledby="projects-title">
-    <div class="section shell">
-      ${sectionHeading('02', 'projects', esc(ui.projects), esc(ui.projectsIntro))}
-      <div class="project-grid">${items}</div>
-    </div>
   </section>`;
 }
 

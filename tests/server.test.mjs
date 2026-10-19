@@ -16,6 +16,7 @@ test('the built site serves pages, scripts, and PDFs beneath /portfolio/', async
       ['/portfolio/journey-fr.html', 'text/html', 'world-track'],
       ['/portfolio/assets/css/styles.css', 'text/css', '.hero'],
       ['/portfolio/assets/js/journey.js', 'text/javascript', 'requestAnimationFrame'],
+      ['/portfolio/assets/js/chatbot.mjs', 'text/javascript', 'matchChatIntent'],
       ['/portfolio/assets/cv/Imad-Chakir-CV-EN.pdf', 'application/pdf', '%PDF-']
     ]) {
       const response = await fetch(origin + route);

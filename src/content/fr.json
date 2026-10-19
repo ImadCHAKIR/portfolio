@@ -27,7 +27,15 @@
     "journeyIntro": "Découvrez mon parcours à travers une courte expérience illustrée.",
     "openJourney": "Explorer le parcours",
     "experienceIntro": "Une expérience en ingénierie entre systèmes d’entreprise et développement applicatif.",
-    "projectsIntro": "Des applications autour de la finance, des interfaces vocales et de l’apprentissage automatique.",
+    "projectsIntro": "Expériences chez Oracle, ANFCC et la Fondation Cheikh Zaid, suivies de projets académiques et personnels.",
+    "caseStudyLabel": "ÉTUDE DE CAS · BROUILLON",
+    "challenge": "Le défi",
+    "contribution": "Ma contribution",
+    "approach": "Approche technique",
+    "evidence": "Éléments à ajouter",
+    "visualPreview": "Aperçu conceptuel",
+    "screenshotHint": "Remplacer ce concept par une capture d’écran réelle du projet.",
+    "evidenceHint": "Remplacer les visuels conceptuels par des captures ou schémas partageables. Ajouter des liens publics et des résultats vérifiés lorsque possible.",
     "skillsIntro": "Les outils et technologies utilisés en développement, en test et en exploitation.",
     "education": "Formation",
     "languages": "Langues",
@@ -39,7 +47,7 @@
     "back": "Retour au portfolio",
     "journeyTitle": "Mon parcours d’ingénieur",
     "journeySubtitle": "Des premières bases à la conception de systèmes fiables.",
-    "instructions": "Utilisez ← / →, faites défiler la scène ou glissez pour avancer.",
+    "instructions": "Faites défiler la page pour avancer. Utilisez ← / → ou glissez pour explorer.",
     "previous": "Chapitre précédent",
     "next": "Chapitre suivant",
     "chapters": "Chapitres du parcours",
@@ -53,7 +61,98 @@
     "cvRole": "Ingénieur logiciel | DevOps | Automatisation QA",
     "page": "Page",
     "goChapter": "Aller au chapitre",
-    "siteDescription": "Imad Chakir, ingénieur logiciel à Rabat. Expérience, projets, compétences, parcours interactif et CV à télécharger."
+    "siteDescription": "Imad Chakir, ingénieur logiciel à Rabat. Expérience, projets, compétences, parcours interactif et CV à télécharger.",
+    "featuredWork": "Expériences professionnelles sélectionnées",
+    "additionalProjects": "Autres projets",
+    "previousProjects": "Projets précédents",
+    "nextProjects": "Projets suivants",
+    "portraitAlt": "Portrait d’Imad Chakir",
+    "chatLauncher": "Poser une question",
+    "chatTitle": "Assistant du portfolio",
+    "chatSubtitle": "Réponses fondées sur ce portfolio",
+    "chatClose": "Fermer le chat",
+    "chatInputLabel": "Votre question",
+    "chatPlaceholder": "Interrogez sur l’expérience, les projets ou les compétences",
+    "chatSend": "Envoyer",
+    "chatSuggestions": "Questions suggérées",
+    "chatTranscript": "Conversation",
+    "chatLinks": "CV et contact",
+    "chatDownloadCv": "Télécharger le CV",
+    "chatEmail": "E-mail",
+    "chatLinkedIn": "LinkedIn"
+  },
+  "chatbot": {
+    "welcome": "Bonjour ! Posez-moi vos questions sur l’expérience, les projets, les compétences, la formation ou l’adéquation d’Imad à un poste.",
+    "fallback": "Je n’ai pas de réponse vérifiée à cette question. Essayez une question sur l’expérience, les projets, les compétences, la formation ou l’adéquation à un poste. Les liens vers le CV et les contacts sont ci-dessous.",
+    "suggestions": ["overview", "experience", "projects", "skills"],
+    "intents": [
+      {
+        "id": "greeting",
+        "prompt": "Dire bonjour",
+        "terms": ["hi", "hello", "hey", "good morning", "bonjour", "salut", "bonsoir", "coucou", "مرحبا", "اهلا", "السلام عليكم"],
+        "answer": "Bonjour ! Je peux vous présenter le parcours d’Imad, son expérience chez Oracle et en stage, ses projets et leurs technologies, ses compétences, sa formation ou les postes correspondant à son expérience. Les liens vers le CV et les contacts sont ci-dessous. Que souhaitez-vous savoir ?"
+      },
+      {
+        "id": "help",
+        "prompt": "Que pouvez-vous m’expliquer ?",
+        "terms": ["help", "aide", "que peux tu faire", "que peux tu m expliquer", "que puis je demander", "quelles questions", "que puis je savoir", "what can you do", "what can i ask", "what can you help me with", "مساعدة", "ماذا يمكنك ان تفعل", "ماذا اسأل", "ما الذي يمكنني سؤالك عنه"],
+        "answer": "Je peux résumer le parcours d’Imad, son expérience chez Oracle et en stage, les technologies de ses projets, ses compétences, sa formation et ses langues, ou les postes correspondant à son expérience publiée. Je peux aussi vous orienter vers son CV et ses contacts."
+      },
+      {
+        "id": "thanks",
+        "prompt": "Dire merci",
+        "terms": ["thanks", "thank you", "merci", "merci beaucoup", "je vous remercie", "شكرا", "شكرا جزيلا", "ممتن"],
+        "answer": "Avec plaisir ! Vous pouvez aussi me demander des précisions sur les projets, l’expérience, les compétences ou les postes adaptés."
+      },
+      {
+        "id": "overview",
+        "prompt": "Quel est le parcours d’Imad ?",
+        "terms": ["parcours", "profil", "qui est imad", "présente imad", "résumé professionnel"],
+        "answer": "Imad Chakir est ingénieur logiciel à Rabat, au Maroc. Il est diplômé en Génie informatique et digitalisation de l’EMI (2021–2024). Son expérience porte sur le développement backend et les API, le DevOps, l’observabilité et l’automatisation QA."
+      },
+      {
+        "id": "experience",
+        "prompt": "Quelle expérience a-t-il ?",
+        "terms": ["expérience", "parcours professionnel", "oracle", "anfcc", "cheikh zaid", "stage", "api de paiement", "équipe payment", "migration de supervision"],
+        "answer": "Chez Oracle, Imad a contribué à l’observabilité de l’équipe APIGW : migration vers les services Telemetry internes, scripts de métriques, tableaux de bord Grafana et alertes. Dans l’équipe Payment, il a travaillé sur les API de validation et de passerelle, l’automatisation des tests avec Selenium, Rest Assured et Appium, ainsi que des outils internes. Il a auparavant effectué des stages à la Fondation Cheikh Zaid (2022) et à l’ANFCC (2023)."
+      },
+      {
+        "id": "projects",
+        "prompt": "Quels projets a-t-il réalisés ?",
+        "terms": ["projet", "projets", "plateforme d’investissement", "météo vocale", "application météo", "reconnaissance faciale", "reconnaissance des émotions", "plateforme d’articles", "partage d’articles", "projet chatbot", "angular", "azure", "oauth", "node red", "tailwind", "activemq", "mosquitto", "whisper", "tensorflow", "keras", "opencv", "fer2013", "react", "dialogflow"],
+        "answer": "Parmi ses projets : une plateforme de portefeuille d’investissement (Power BI, Python, MySQL, Azure, OAuth, C#, Angular, .NET) ; une application météo vocale (Angular, Spring, Node-RED, Express, MySQL, Tailwind, Java, ActiveMQ, Mosquitto, Whisper) ; la reconnaissance d’expressions faciales (Python, TensorFlow, Keras, OpenCV, FER2013) ; et une plateforme de partage d’articles (React, Spring, MongoDB, Express, Python, Dialogflow)."
+      },
+      {
+        "id": "skills",
+        "prompt": "Quelles technologies utilise-t-il ?",
+        "terms": ["compétence", "compétences", "technologie", "technologies", "stack technique", "programmation", "backend", "devops", "tests", "automatisation qa", "docker", "terraform", "grafana", "selenium", "kafka", "python", "java", "c sharp", "c#", "javascript", "bash", "sql", ".net", "spring boot", "node.js", "express", "api rest", "rest assured", "ansible", "jenkins", "gitlab ci", "linux", "prometheus", "telemetry", "appium", "postman", "postgresql", "mongodb", "mysql", "redis", "git", "jira", "intellij", "power bi"],
+        "answer": "Ses compétences comprennent Python, Java, C#, JavaScript et SQL ; Spring Boot, .NET, Node.js, Express et les API REST ; Docker, Terraform, Ansible, Jenkins, GitLab CI/CD et Linux ; Grafana, Prometheus et Telemetry ; ainsi que Selenium, Appium, Postman et l’automatisation des tests d’API."
+      },
+      {
+        "id": "education",
+        "prompt": "Qu’a-t-il étudié et quelles langues parle-t-il ?",
+        "terms": ["formation", "études", "diplôme", "emi", "classes préparatoires", "langues", "français", "anglais", "arabe"],
+        "answer": "Imad a obtenu un diplôme d’ingénieur en Génie informatique et digitalisation à l’EMI de Rabat (2021–2024), après des classes préparatoires MPSI et MP* (2019–2021). Les langues indiquées sont l’arabe (langue maternelle), le français (B2) et l’anglais (B2)."
+      },
+      {
+        "id": "fit",
+        "prompt": "Quels postes correspondent à son expérience ?",
+        "terms": ["adéquation poste", "poste qa", "poste devops", "poste backend", "profil adapté", "expérience pertinente", "recrutement", "recruteur", "embaucher"],
+        "answer": "D’après l’expérience publiée, ses domaines pertinents comprennent l’ingénierie backend et API, le DevOps et l’observabilité, ainsi que l’automatisation QA. Exemples : API de paiement, migration vers Oracle Telemetry, tableaux de bord et alertes Grafana, et automatisation de tests d’API et de plateforme. Cette synthèse se limite aux expériences indiquées et n’évalue pas une offre complète."
+      },
+      {
+        "id": "cv",
+        "prompt": "Où trouver son CV ?",
+        "terms": ["cv", "curriculum vitæ", "télécharger", "téléchargement", "resume"],
+        "answer": "Utilisez le lien Télécharger le CV ci-dessous. Le fichier correspond à la langue de cette page."
+      },
+      {
+        "id": "contact",
+        "prompt": "Comment le contacter ?",
+        "terms": ["contact", "e-mail", "linkedin", "joindre imad", "contacter imad", "collaborer", "opportunité"],
+        "answer": "Pour une opportunité de recrutement ou une collaboration, utilisez les liens E-mail ou LinkedIn ci-dessous."
+      }
+    ]
   },
   "experience": [
     {
@@ -112,6 +211,81 @@
         "Contribution à une application web et mobile intégrant un chatbot, de la planification et la modélisation au développement et aux tests.",
         "Consolidation des compétences en conception logicielle, collaboration et cycle de développement complet."
       ],
+      "tags": [
+        "Web et mobile",
+        "Chatbots",
+        "Conception logicielle"
+      ]
+    }
+  ],
+  "featuredWork": [
+    {
+      "name": "Oracle · Observabilité APIGW",
+      "role": "Observabilité · Équipe APIGW",
+      "type": "Expérience professionnelle · Observabilité",
+      "date": "",
+      "visual": "observability",
+      "description": "Migration de la supervision de l’équipe, auparavant fondée sur Elasticsearch et Prometheus, vers les services Telemetry internes d’Oracle.",
+      "challenge": "Migrer la solution de supervision de l’équipe vers les services Telemetry internes d’Oracle.",
+      "contribution": "Migration de la solution, création de scripts de collecte et de transfert de métriques, et de tableaux de bord Grafana avec alertes.",
+      "approach": "Oracle Telemetry, Grafana, Elasticsearch, Prometheus et scripts d’automatisation.",
+      "evidence": "Ajouter un tableau de bord ou un schéma de métriques expurgé, ainsi qu’un résultat partageable sans divulguer d’informations internes.",
+      "tags": [
+        "Telemetry",
+        "Grafana",
+        "Prometheus",
+        "Flux de métriques"
+      ]
+    },
+    {
+      "name": "Oracle · API de paiement et QA",
+      "role": "Équipe Paiement · API et automatisation QA",
+      "type": "Expérience professionnelle · Paiement",
+      "date": "",
+      "visual": "payments",
+      "description": "Contribution aux API de validation des paiements et de passerelle, à l’automatisation des tests, aux outils internes et aux premiers travaux sur Redis et Kafka.",
+      "challenge": "Valider les demandes de paiement et tester les transactions de passerelle avec plusieurs moyens de paiement.",
+      "contribution": "Automatisation des tests d’API et de plateforme, contribution aux API de validation et de passerelle, et création d’outils internes de test.",
+      "approach": "Selenium, Rest Assured, Appium, et premiers travaux de conception et d’implémentation avec Redis et Kafka.",
+      "evidence": "Ajouter un exemple d’API expurgé, préciser votre rôle et indiquer un résultat partageable publiquement.",
+      "tags": [
+        "API de paiement",
+        "Selenium",
+        "Rest Assured",
+        "Appium",
+        "Redis",
+        "Kafka"
+      ]
+    },
+    {
+      "name": "ANFCC · Applications web et mobiles",
+      "role": "Stagiaire en développement et maintenance",
+      "type": "Stage · Développement",
+      "date": "Juil.–août 2023 · Rabat",
+      "visual": "applications",
+      "description": "Développement d’applications web et mobiles en équipe Agile, de la planification et la conception à l’implémentation et aux tests.",
+      "challenge": "Contribuer au cycle de développement d’applications web et mobiles au sein d’une équipe Agile.",
+      "contribution": "Participation à la planification, à la conception, à l’implémentation et aux tests.",
+      "approach": "C#, Ionic, Postman, IIS, SQL Server, Python, UML et Figma.",
+      "evidence": "Ajouter le nom de l’application, votre module, une capture partageable et un résultat concret.",
+      "tags": [
+        "C#",
+        "Ionic",
+        "SQL Server",
+        "Figma"
+      ]
+    },
+    {
+      "name": "Fondation Cheikh Zaid · Application web et mobile",
+      "role": "Stagiaire en services informatiques",
+      "type": "Stage · Services informatiques",
+      "date": "Juil.–août 2022 · Rabat",
+      "visual": "chatbot",
+      "description": "Contribution à une application web et mobile avec chatbot, de la planification et la modélisation au développement et aux tests.",
+      "challenge": "Contribuer à une application web et mobile intégrant un chatbot.",
+      "contribution": "Participation de la planification et la modélisation au développement et aux tests.",
+      "approach": "Le CV ne précise pas les outils utilisés pendant ce stage. Ajoutez les technologies dont vous vous souvenez.",
+      "evidence": "Ajouter le nom de l’application, votre contribution, une capture partageable du chatbot et les outils utilisés.",
       "tags": [
         "Web et mobile",
         "Chatbots",

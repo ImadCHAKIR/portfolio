@@ -27,7 +27,15 @@
     "journeyIntro": "Explore my background through a short illustrated experience.",
     "openJourney": "Explore the journey",
     "experienceIntro": "Engineering experience across enterprise systems and application development.",
-    "projectsIntro": "A selection of applications built across finance, voice interfaces, and machine learning.",
+    "projectsIntro": "Professional work at Oracle, ANFCC, and Cheikh Zaid Foundation, followed by selected academic and personal projects.",
+    "caseStudyLabel": "WORK CASE STUDY · DRAFT",
+    "challenge": "The challenge",
+    "contribution": "My contribution",
+    "approach": "Technical approach",
+    "evidence": "Evidence to add",
+    "visualPreview": "Concept preview",
+    "screenshotHint": "Replace this concept with a real project screenshot.",
+    "evidenceHint": "Replace concept visuals with shareable screenshots or diagrams. Add public links and verified results where available.",
     "skillsIntro": "Tools and technologies used in development, testing, and operations.",
     "education": "Education",
     "languages": "Languages",
@@ -39,7 +47,7 @@
     "back": "Back to portfolio",
     "journeyTitle": "My engineering journey",
     "journeySubtitle": "From the first foundations to building reliable systems.",
-    "instructions": "Use ← / →, scroll over the scene, or swipe to explore.",
+    "instructions": "Scroll down to move through the journey. Use ← / → or swipe to explore.",
     "previous": "Previous chapter",
     "next": "Next chapter",
     "chapters": "Journey chapters",
@@ -53,7 +61,98 @@
     "cvRole": "Software Engineer | DevOps | QA Automation",
     "page": "Page",
     "goChapter": "Go to chapter",
-    "siteDescription": "Imad Chakir, software engineer in Rabat. Experience, projects, technical skills, an interactive journey, and a downloadable CV."
+    "siteDescription": "Imad Chakir, software engineer in Rabat. Experience, projects, technical skills, an interactive journey, and a downloadable CV.",
+    "featuredWork": "Featured professional work",
+    "additionalProjects": "Additional projects",
+    "previousProjects": "Previous projects",
+    "nextProjects": "Next projects",
+    "portraitAlt": "Portrait of Imad Chakir",
+    "chatLauncher": "Ask about my portfolio",
+    "chatTitle": "Portfolio assistant",
+    "chatSubtitle": "Answers based on this portfolio",
+    "chatClose": "Close chat",
+    "chatInputLabel": "Ask a question",
+    "chatPlaceholder": "Ask about experience, projects, or skills",
+    "chatSend": "Send",
+    "chatSuggestions": "Suggested questions",
+    "chatTranscript": "Conversation",
+    "chatLinks": "CV and contact",
+    "chatDownloadCv": "Download CV",
+    "chatEmail": "Email",
+    "chatLinkedIn": "LinkedIn"
+  },
+  "chatbot": {
+    "welcome": "Hi! Ask me about Imad’s experience, projects, skills, education, or fit for a role.",
+    "fallback": "I don’t have a verified answer for that. Try a question about experience, projects, skills, education, or role fit. The CV and contact links are below.",
+    "suggestions": ["overview", "experience", "projects", "skills"],
+    "intents": [
+      {
+        "id": "greeting",
+        "prompt": "Say hello",
+        "terms": ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings", "bonjour", "salut", "bonsoir", "مرحبا", "اهلا", "السلام عليكم"],
+        "answer": "Hi! I can help you explore Imad’s background, Oracle experience, projects and tech stacks, skills, education, or role fit. You can also use the CV and contact links below. What would you like to know?"
+      },
+      {
+        "id": "help",
+        "prompt": "What can you help with?",
+        "terms": ["help", "what can you do", "what can i ask", "what should i ask", "what can you help with", "what can you help me with", "suggest a question", "aide", "que peux tu faire", "que puis je demander", "quelles questions", "مساعدة", "ماذا يمكنك ان تفعل", "ماذا اسأل", "ما الذي يمكنني سؤالك عنه"],
+        "answer": "I can summarize Imad’s background, Oracle and internship experience, project stacks, technical skills, education and languages, or the roles his published experience may fit. I can also point you to the CV and contact links below."
+      },
+      {
+        "id": "thanks",
+        "prompt": "Say thanks",
+        "terms": ["thanks", "thank you", "thank you so much", "appreciate it", "much appreciated", "merci", "merci beaucoup", "je vous remercie", "شكرا", "شكرا جزيلا", "ممتن"],
+        "answer": "You’re welcome! If you’d like, ask about Imad’s projects, experience, skills, or role fit."
+      },
+      {
+        "id": "overview",
+        "prompt": "What is Imad’s background?",
+        "terms": ["background", "profile", "who is imad", "tell me about imad", "career summary"],
+        "answer": "Imad Chakir is a software engineer based in Rabat, Morocco. He earned an engineering degree in Computer Engineering and Digitalization at EMI (2021–2024). His work focuses on backend and API development, DevOps, observability, and QA automation."
+      },
+      {
+        "id": "experience",
+        "prompt": "What experience does he have?",
+        "terms": ["experience", "work history", "oracle", "anfcc", "cheikh zaid", "internship", "payment api", "payment team", "observability migration"],
+        "answer": "At Oracle, Imad contributed to APIGW observability work, moving monitoring to internal Telemetry services and building metric pipelines, Grafana dashboards, and alarms. On the Payment team, he worked on validation and gateway APIs, test automation with Selenium, Rest Assured, and Appium, and internal testing tools. Earlier, he interned at Cheikh Zaid Foundation (2022) and ANFCC (2023)."
+      },
+      {
+        "id": "projects",
+        "prompt": "What projects has he built?",
+        "terms": ["project", "projects", "investment platform", "voice weather", "weather app", "facial expression", "emotion recognition", "article platform", "article sharing", "chatbot project", "angular", "azure", "oauth", "node red", "tailwind", "activemq", "mosquitto", "whisper", "tensorflow", "keras", "opencv", "fer2013", "react", "dialogflow"],
+        "answer": "Selected projects include an investment portfolio platform (Power BI, Python, MySQL, Azure, OAuth, C#, Angular, .NET); a voice-enabled weather app (Angular, Spring, Node-RED, Express, MySQL, Tailwind, Java, ActiveMQ, Mosquitto, Whisper); facial expression recognition (Python, TensorFlow, Keras, OpenCV, FER2013); and an article-sharing platform (React, Spring, MongoDB, Express, Python, Dialogflow)."
+      },
+      {
+        "id": "skills",
+        "prompt": "Which technologies does he use?",
+        "terms": ["skill", "skills", "tech stack", "technology", "technologies", "programming", "backend", "devops", "testing", "qa automation", "docker", "terraform", "grafana", "selenium", "kafka", "python", "java", "c sharp", "c#", "javascript", "bash", "sql", "dot net", ".net", "spring boot", "node.js", "express", "rest api", "rest assured", "ansible", "jenkins", "gitlab ci", "linux", "prometheus", "telemetry", "appium", "postman", "postgresql", "mongodb", "mysql", "redis", "git", "jira", "intellij", "power bi"],
+        "answer": "His listed skills include Python, Java, C#, JavaScript, and SQL; Spring Boot, .NET, Node.js, Express, and REST APIs; Docker, Terraform, Ansible, Jenkins, GitLab CI/CD, and Linux; Grafana, Prometheus, and Telemetry; and Selenium, Appium, Postman, and API test automation."
+      },
+      {
+        "id": "education",
+        "prompt": "What did he study, and which languages does he speak?",
+        "terms": ["education", "degree", "emi", "study", "studied", "preparatory classes", "languages", "language", "french", "english", "arabic"],
+        "answer": "Imad earned an engineering degree in Computer Engineering and Digitalization at EMI in Rabat (2021–2024), after MPSI and MP* preparatory studies (2019–2021). His listed languages are Arabic (native), French (B2), and English (B2)."
+      },
+      {
+        "id": "fit",
+        "prompt": "What roles could his experience fit?",
+        "terms": ["role fit", "job fit", "suitable role", "qa role", "devops role", "backend role", "relevant experience", "fit for", "hire", "hiring"],
+        "answer": "Based on the published experience, relevant areas include backend/API engineering, DevOps and observability, and QA automation. Examples include payment validation and gateway APIs, Oracle Telemetry migration, Grafana dashboards and alarms, and automated API/platform testing. This summary uses listed experience; it does not evaluate a full job description."
+      },
+      {
+        "id": "cv",
+        "prompt": "Where can I get his CV?",
+        "terms": ["cv", "resume", "résumé", "curriculum vitae", "download", "download cv"],
+        "answer": "Use the Download CV link below. It downloads the CV in the language of this page."
+      },
+      {
+        "id": "contact",
+        "prompt": "How can I contact him?",
+        "terms": ["contact", "email", "linkedin", "reach imad", "get in touch", "collaborate", "opportunity"],
+        "answer": "For a hiring opportunity or collaboration, use the email or LinkedIn links below."
+      }
+    ]
   },
   "experience": [
     {
@@ -112,6 +211,81 @@
         "Contributed to a web and mobile application with chatbot support, from planning and modeling through development and testing.",
         "Developed practical skills in software design, collaboration, and the full development lifecycle."
       ],
+      "tags": [
+        "Web & mobile",
+        "Chatbots",
+        "Software design"
+      ]
+    }
+  ],
+  "featuredWork": [
+    {
+      "name": "Oracle · APIGW Observability",
+      "role": "Observability · APIGW Team",
+      "type": "Professional work · Observability",
+      "date": "",
+      "visual": "observability",
+      "description": "Migrated team monitoring from Elasticsearch- and Prometheus-based tooling to Oracle internal Telemetry services.",
+      "challenge": "Move the team monitoring solution to Oracle internal Telemetry services.",
+      "contribution": "Migrated the monitoring solution, built metric collection and streaming scripts, and created Grafana dashboards and alarms.",
+      "approach": "Oracle Telemetry, Grafana, Elasticsearch, Prometheus, and automation scripts.",
+      "evidence": "Add a sanitized dashboard or metric-flow image and a result you can share without exposing internal details.",
+      "tags": [
+        "Telemetry",
+        "Grafana",
+        "Prometheus",
+        "Metric pipelines"
+      ]
+    },
+    {
+      "name": "Oracle · Payment APIs & QA",
+      "role": "Payment Team · APIs & QA automation",
+      "type": "Professional work · Payments",
+      "date": "",
+      "visual": "payments",
+      "description": "Contributed to payment request validation and gateway APIs, automated platform tests, built internal testing tools, and supported early Redis and Kafka work.",
+      "challenge": "Validate payment requests and test gateway transaction flows across multiple payment methods.",
+      "contribution": "Automated API and platform testing, contributed to validation and gateway APIs, and built lightweight internal testing tools.",
+      "approach": "Selenium, Rest Assured, Appium, and early design and implementation work with Redis and Kafka.",
+      "evidence": "Add a sanitized API example, your exact scope, and a result that can be shared publicly.",
+      "tags": [
+        "Payment APIs",
+        "Selenium",
+        "Rest Assured",
+        "Appium",
+        "Redis",
+        "Kafka"
+      ]
+    },
+    {
+      "name": "ANFCC · Web & mobile applications",
+      "role": "Development & Maintenance Intern",
+      "type": "Internship · Development",
+      "date": "Jul–Aug 2023 · Rabat",
+      "visual": "applications",
+      "description": "Worked on web and mobile application development in an Agile environment, from planning and design through implementation and testing.",
+      "challenge": "Contribute across the lifecycle of web and mobile application development in an Agile team.",
+      "contribution": "Worked across planning, design, implementation, and testing.",
+      "approach": "C#, Ionic, Postman, IIS, SQL Server, Python, UML, and Figma.",
+      "evidence": "Add the application name, your specific module, a screenshot you can share, and a concrete result.",
+      "tags": [
+        "C#",
+        "Ionic",
+        "SQL Server",
+        "Figma"
+      ]
+    },
+    {
+      "name": "Cheikh Zaid Foundation · Web & mobile app",
+      "role": "IT Services Intern",
+      "type": "Internship · IT services",
+      "date": "Jul–Aug 2022 · Rabat",
+      "visual": "chatbot",
+      "description": "Contributed to a web and mobile application with chatbot support, from planning and modeling through development and testing.",
+      "challenge": "Contribute to a web and mobile application that includes chatbot support.",
+      "contribution": "Worked from planning and modeling through development and testing.",
+      "approach": "The CV does not list this internship’s tools. Add the technologies you used if you remember them.",
+      "evidence": "Add the application name, your specific contribution, a shareable chatbot screenshot, and the tools used.",
       "tags": [
         "Web & mobile",
         "Chatbots",

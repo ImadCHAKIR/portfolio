@@ -25,12 +25,13 @@ src/                         Editable website source
     ar.json                  Arabic content and interface labels
   templates/
     portfolio.mjs            Assembles the main portfolio page
-    portfolio-sections.mjs   Hero, experience, projects, skills, and contact
+    portfolio-sections.mjs   Introduction, experience, skills, education, and contact
+    projects.mjs              Featured work case studies and additional projects
     journey.mjs              Journey page and accessible text transcript
     layout.mjs               Shared document head, navigation, and footer
     context.mjs              HTML escaping and Arabic text direction
     scenery.mjs              Inserts and translates the SVG illustrations
-  styles/                    Base, navigation, portfolio, journey, responsive, print
+  styles/                    Base, navigation, portfolio, projects, journey, responsive, accessibility
   scripts/                   Mobile menu and interactive journey controls
   artwork/                   Original SVG scenes and avatar
   config.mjs                 Languages, public URLs, and stylesheet order
@@ -51,10 +52,11 @@ The six HTML files and `assets/` in the repository root are **generated deployme
 
 | Change | Edit |
 | --- | --- |
-| Experience, projects, skills, education, or translations | `src/content/en.json`, `fr.json`, and `ar.json` |
+| Experience, featured work, projects, skills, education, or translations | `src/content/en.json`, `fr.json`, and `ar.json` |
 | Email, name, LinkedIn, or GitHub | `src/content/contact.json` |
 | Page layout or sections | `src/templates/` |
-| Colors, typography, or spacing | `src/styles/` |
+| Project cards and case-study layout | `src/templates/projects.mjs`, `src/styles/projects.css` |
+| Colors, typography, or general spacing | `src/styles/` |
 | Navigation or journey behavior | `src/scripts/` |
 | Illustrated journey scenes | `src/artwork/` |
 | CV layout or generation | `scripts/cv/build.py`; see [the CV guide](docs/cv.md) |

@@ -1,5 +1,6 @@
 import { head, header, footer } from './layout.mjs';
-import { renderIntroduction, renderExperience, renderProjects, renderSkills, renderEducation, renderContact } from './portfolio-sections.mjs';
+import { renderIntroduction, renderExperience, renderSkills, renderEducation, renderContact } from './portfolio-sections.mjs';
+import { renderProjects } from './projects.mjs';
 
 export function renderPortfolio(context) {
   return `${head(context, false)}

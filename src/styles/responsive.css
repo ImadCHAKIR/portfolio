@@ -26,6 +26,10 @@
     padding-top: 60px;
   }
 
+  .hero-portrait {
+    width: min(100%, 340px);
+  }
+
   .hero h1 {
     font-size: 48px;
   }
@@ -47,8 +51,8 @@
     gap: 35px;
   }
 
-  .journey-stage {
-    height: 300px;
+  .journey-experience {
+    min-height: 560px;
   }
 
 }
@@ -84,6 +88,12 @@
     grid-template-columns: 1fr;
     gap: 33px;
     padding-block: 50px 32px;
+  }
+
+  .hero-portrait {
+    width: min(100%, 420px);
+    aspect-ratio: 1;
+    justify-self: center;
   }
 
   .hero-intro {
@@ -140,26 +150,6 @@
     margin: 0;
   }
 
-  .project-grid {
-    gap: 17px;
-  }
-
-  .project-card {
-    padding: 22px;
-  }
-
-  .project-card h3 {
-    font-size: 19px;
-  }
-
-  .project-card>p {
-    font-size: 13px;
-  }
-
-  .project-top .eyebrow {
-    font-size: 9px;
-  }
-
   .skill-grid {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
@@ -209,8 +199,8 @@
     gap: 12px;
   }
 
-  .journey-stage {
-    height: 270px;
+  .journey-experience {
+    min-height: 560px;
   }
 
   .journey-panel {
@@ -367,22 +357,6 @@
     font-size: 9px;
   }
 
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    padding: 23px;
-  }
-
-  .project-card h3 {
-    font-size: 20px;
-  }
-
-  .project-card>p {
-    font-size: 14px;
-  }
-
   .skill-grid {
     gap: 25px 20px;
   }
@@ -428,6 +402,21 @@
     padding-top: 22px;
   }
 
+  .journey-scroll {
+    height: auto;
+    margin-top: 17px;
+  }
+
+  .js-ready .journey-scroll {
+    height: calc(80svh * var(--chapter-count));
+  }
+
+  .journey-experience {
+    top: 70px;
+    height: calc(100svh - 88px);
+    min-height: 580px;
+  }
+
   .journey-heading {
     display: block;
     margin-top: 18px;
@@ -446,7 +435,7 @@
   }
 
   .journey-stage {
-    height: 245px;
+    min-height: 230px;
   }
 
   .world-zone>svg {
@@ -506,6 +495,10 @@
     display: flex;
     align-items: center;
     gap: 17px;
+  }
+
+  .journey-progress-meter {
+    display: none;
   }
 
   .chapter-count {

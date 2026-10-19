@@ -13,6 +13,7 @@
   <link rel="alternate" hreflang="fr" href="fr.html">
   <link rel="alternate" hreflang="ar" href="ar.html">
   <script src="assets/js/main.js" defer></script>
+  <script type="module" src="assets/js/chatbot.mjs"></script>
 
 </head>
 <body>
@@ -46,27 +47,14 @@
         <a class="button secondary" href="#projects">View projects</a>
       </div>
       <p class="download-note">PDF · 2 pages · English</p>
-    </div>
-    <aside class="focus-panel" aria-labelledby="focus-title">
-      <h2 id="focus-title">What I work on</h2>
-      <ul>
-    <li>
-      <span class="focus-number" aria-hidden="true">01</span>
-      <span>Backend systems &amp; APIs</span>
-    </li>
-    <li>
-      <span class="focus-number" aria-hidden="true">02</span>
-      <span>DevOps &amp; observability</span>
-    </li>
-    <li>
-      <span class="focus-number" aria-hidden="true">03</span>
-      <span>Quality &amp; test automation</span>
-    </li></ul>
       <div class="profile-links">
     <a href="https://www.linkedin.com/in/imad-chakir-594895188/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
     <a href="https://github.com/ImadCHAKIR" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
   </div>
-    </aside>
+    </div>
+    <figure class="hero-portrait">
+      <img src="assets/img/imad-chakir.png" alt="Portrait of Imad Chakir" width="800" height="800" fetchpriority="high" decoding="async">
+    </figure>
   </section>
   <aside class="journey-invite shell">
     <div>
@@ -137,16 +125,159 @@
     <p class="section-number" aria-hidden="true">02</p>
     <div>
       <h2 id="projects-title">Projects</h2>
-      <p>A selection of applications built across finance, voice interfaces, and machine learning.</p>
+      <p>Professional work at Oracle, ANFCC, and Cheikh Zaid Foundation, followed by selected academic and personal projects.</p>
     </div>
   </div>
-      <div class="project-grid">
+      <p class="project-prototype-note">Replace concept visuals with shareable screenshots or diagrams. Add public links and verified results where available.</p>
+      <h3 class="work-section-title">Featured professional work</h3>
+      <div class="work-card-grid"><article class="work-card">
+    <div class="project-visual">
+    <div class="project-visual-window visual-observability" aria-hidden="true"><div class="concept-observability">
+    <aside><i></i><i></i><i></i><i></i></aside>
+    <section>
+      <header><i></i><b></b></header>
+      <div class="concept-metrics"><i></i><i></i><i></i></div>
+      <div class="concept-line-chart">
+        <svg viewBox="0 0 340 96" preserveAspectRatio="none">
+          <path d="M0 74 C28 61 45 72 68 49 S102 63 125 41 156 50 181 33 208 47 232 23 265 39 287 18 316 30 340 7"/>
+          <path class="chart-fill" d="M0 74 C28 61 45 72 68 49 S102 63 125 41 156 50 181 33 208 47 232 23 265 39 287 18 316 30 340 7 V96 H0Z"/>
+        </svg>
+      </div>
+      <div class="concept-alerts"><i></i><i></i><i></i></div>
+    </section>
+  </div></div>
+    <div class="project-visual-caption">
+      <span>Concept preview</span>
+      <p>Replace this concept with a real project screenshot.</p>
+    </div>
+  </div>
+    <div class="work-card-content">
+      <div class="project-top">
+        <p class="eyebrow">WORK CASE STUDY · DRAFT</p>
+        <span aria-hidden="true">01</span>
+      </div>
+      <p class="work-type">Professional work · Observability</p>
+      <h4>Oracle · APIGW Observability</h4>
+      <p class="work-role">Observability · APIGW Team</p>
+      <p class="work-description">Migrated team monitoring from Elasticsearch- and Prometheus-based tooling to Oracle internal Telemetry services.</p>
+      <div class="case-study-grid">
+        <section><h5>The challenge</h5><p>Move the team monitoring solution to Oracle internal Telemetry services.</p></section>
+        <section><h5>My contribution</h5><p>Migrated the monitoring solution, built metric collection and streaming scripts, and created Grafana dashboards and alarms.</p></section>
+        <section><h5>Technical approach</h5><p>Oracle Telemetry, Grafana, Elasticsearch, Prometheus, and automation scripts.</p></section>
+        <section><h5>Evidence to add</h5><p>Add a sanitized dashboard or metric-flow image and a result you can share without exposing internal details.</p></section>
+      </div>
+      <div class="tags"><span><bdi>Telemetry</bdi></span><span><bdi>Grafana</bdi></span><span><bdi>Prometheus</bdi></span><span><bdi>Metric pipelines</bdi></span></div>
+    </div>
+  </article><article class="work-card">
+    <div class="project-visual">
+    <div class="project-visual-window visual-payments" aria-hidden="true"><div class="concept-payment">
+    <div class="concept-payment-card"><i></i><b></b><span></span><span></span></div>
+    <div class="concept-flow"><i></i><i></i><i></i></div>
+    <div class="concept-payment-card gateway"><i></i><b></b><span></span><span></span></div>
+    <div class="concept-check">✓</div>
+  </div></div>
+    <div class="project-visual-caption">
+      <span>Concept preview</span>
+      <p>Replace this concept with a real project screenshot.</p>
+    </div>
+  </div>
+    <div class="work-card-content">
+      <div class="project-top">
+        <p class="eyebrow">WORK CASE STUDY · DRAFT</p>
+        <span aria-hidden="true">02</span>
+      </div>
+      <p class="work-type">Professional work · Payments</p>
+      <h4>Oracle · Payment APIs &amp; QA</h4>
+      <p class="work-role">Payment Team · APIs &amp; QA automation</p>
+      <p class="work-description">Contributed to payment request validation and gateway APIs, automated platform tests, built internal testing tools, and supported early Redis and Kafka work.</p>
+      <div class="case-study-grid">
+        <section><h5>The challenge</h5><p>Validate payment requests and test gateway transaction flows across multiple payment methods.</p></section>
+        <section><h5>My contribution</h5><p>Automated API and platform testing, contributed to validation and gateway APIs, and built lightweight internal testing tools.</p></section>
+        <section><h5>Technical approach</h5><p>Selenium, Rest Assured, Appium, and early design and implementation work with Redis and Kafka.</p></section>
+        <section><h5>Evidence to add</h5><p>Add a sanitized API example, your exact scope, and a result that can be shared publicly.</p></section>
+      </div>
+      <div class="tags"><span><bdi>Payment APIs</bdi></span><span><bdi>Selenium</bdi></span><span><bdi>Rest Assured</bdi></span><span><bdi>Appium</bdi></span><span><bdi>Redis</bdi></span><span><bdi>Kafka</bdi></span></div>
+    </div>
+  </article><article class="work-card">
+    <div class="project-visual">
+    <div class="project-visual-window visual-applications" aria-hidden="true"><div class="concept-apps">
+    <div class="concept-desktop">
+      <div class="concept-window-bar"><i></i><i></i><i></i></div>
+      <div class="concept-app-layout">
+        <aside><i></i><i></i><i></i></aside>
+        <section><b></b><i></i><i></i><i></i><div><i></i><i></i></div></section>
+      </div>
+    </div>
+    <div class="concept-mobile"><i></i><b></b><span></span><span></span><span></span><div></div></div>
+  </div></div>
+    <div class="project-visual-caption">
+      <span>Concept preview</span>
+      <p>Replace this concept with a real project screenshot.</p>
+    </div>
+  </div>
+    <div class="work-card-content">
+      <div class="project-top">
+        <p class="eyebrow">WORK CASE STUDY · DRAFT</p>
+        <span aria-hidden="true">03</span>
+      </div>
+      <p class="work-type">Internship · Development</p>
+      <h4>ANFCC · Web &amp; mobile applications</h4>
+      <p class="work-role">Development &amp; Maintenance Intern<span> · Jul–Aug 2023 · Rabat</span></p>
+      <p class="work-description">Worked on web and mobile application development in an Agile environment, from planning and design through implementation and testing.</p>
+      <div class="case-study-grid">
+        <section><h5>The challenge</h5><p>Contribute across the lifecycle of web and mobile application development in an Agile team.</p></section>
+        <section><h5>My contribution</h5><p>Worked across planning, design, implementation, and testing.</p></section>
+        <section><h5>Technical approach</h5><p>C#, Ionic, Postman, IIS, SQL Server, Python, UML, and Figma.</p></section>
+        <section><h5>Evidence to add</h5><p>Add the application name, your specific module, a screenshot you can share, and a concrete result.</p></section>
+      </div>
+      <div class="tags"><span><bdi>C#</bdi></span><span><bdi>Ionic</bdi></span><span><bdi>SQL Server</bdi></span><span><bdi>Figma</bdi></span></div>
+    </div>
+  </article><article class="work-card">
+    <div class="project-visual">
+    <div class="project-visual-window visual-chatbot" aria-hidden="true"><div class="concept-chat">
+    <div class="concept-chat-window">
+      <header><i></i><b></b><span></span></header>
+      <div class="concept-bubble left"><i></i><i></i></div>
+      <div class="concept-bubble right"><i></i></div>
+      <div class="concept-bubble left short"><i></i><i></i></div>
+      <footer><i></i><b>↗</b></footer>
+    </div>
+  </div></div>
+    <div class="project-visual-caption">
+      <span>Concept preview</span>
+      <p>Replace this concept with a real project screenshot.</p>
+    </div>
+  </div>
+    <div class="work-card-content">
+      <div class="project-top">
+        <p class="eyebrow">WORK CASE STUDY · DRAFT</p>
+        <span aria-hidden="true">04</span>
+      </div>
+      <p class="work-type">Internship · IT services</p>
+      <h4>Cheikh Zaid Foundation · Web &amp; mobile app</h4>
+      <p class="work-role">IT Services Intern<span> · Jul–Aug 2022 · Rabat</span></p>
+      <p class="work-description">Contributed to a web and mobile application with chatbot support, from planning and modeling through development and testing.</p>
+      <div class="case-study-grid">
+        <section><h5>The challenge</h5><p>Contribute to a web and mobile application that includes chatbot support.</p></section>
+        <section><h5>My contribution</h5><p>Worked from planning and modeling through development and testing.</p></section>
+        <section><h5>Technical approach</h5><p>The CV does not list this internship’s tools. Add the technologies you used if you remember them.</p></section>
+        <section><h5>Evidence to add</h5><p>Add the application name, your specific contribution, a shareable chatbot screenshot, and the tools used.</p></section>
+      </div>
+      <div class="tags"><span><bdi>Web &amp; mobile</bdi></span><span><bdi>Chatbots</bdi></span><span><bdi>Software design</bdi></span></div>
+    </div>
+  </article></div>
+      <h3 class="work-section-title additional-projects-title" id="additional-projects-title">Additional projects</h3>
+      <div class="project-rail-controls" hidden>
+        <button class="project-rail-previous" type="button" data-project-scroll="previous" aria-label="Previous projects" aria-controls="additional-projects-rail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+        <button class="project-rail-next" type="button" data-project-scroll="next" aria-label="Next projects" aria-controls="additional-projects-rail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </div>
+      <div class="project-grid" id="additional-projects-rail" role="region" aria-labelledby="additional-projects-title" tabindex="0">
     <article class="project-card">
       <div class="project-top">
         <p class="eyebrow">Full-stack · Finance</p>
         <span aria-hidden="true">01</span>
       </div>
-      <h3>Investment Portfolio Platform</h3>
+      <h4>Investment Portfolio Platform</h4>
       <p>Built an investment management platform supporting portfolio monitoring, recommendations, performance and risk evaluation, and tax reporting.</p>
       <div class="tags"><span><bdi>Angular</bdi></span><span><bdi>.NET</bdi></span><span><bdi>Python</bdi></span><span><bdi>Azure</bdi></span></div>
     </article>
@@ -155,7 +286,7 @@
         <p class="eyebrow">Web application · Voice</p>
         <span aria-hidden="true">02</span>
       </div>
-      <h3>Voice-enabled Weather</h3>
+      <h4>Voice-enabled Weather</h4>
       <p>Developed a weather application supporting both typed and voice-based queries, combining web services and speech recognition.</p>
       <div class="tags"><span><bdi>Angular</bdi></span><span><bdi>Spring</bdi></span><span><bdi>Whisper</bdi></span><span><bdi>Node-RED</bdi></span></div>
     </article>
@@ -164,7 +295,7 @@
         <p class="eyebrow">Machine learning · Desktop</p>
         <span aria-hidden="true">03</span>
       </div>
-      <h3>Facial Expression Recognition</h3>
+      <h4>Facial Expression Recognition</h4>
       <p>Developed a desktop application for real-time emotion detection from images, videos, and live streams using the FER2013 dataset.</p>
       <div class="tags"><span><bdi>Python</bdi></span><span><bdi>TensorFlow</bdi></span><span><bdi>Keras</bdi></span><span><bdi>OpenCV</bdi></span></div>
     </article>
@@ -173,7 +304,7 @@
         <p class="eyebrow">Full-stack · Content</p>
         <span aria-hidden="true">04</span>
       </div>
-      <h3>Article Sharing Platform</h3>
+      <h4>Article Sharing Platform</h4>
       <p>Built a full-stack article platform with account creation, chatbot support, and article generation through web scraping.</p>
       <div class="tags"><span><bdi>React</bdi></span><span><bdi>Spring</bdi></span><span><bdi>MongoDB</bdi></span><span><bdi>Dialogflow</bdi></span></div>
     </article></div>
@@ -277,5 +408,42 @@
   </section>
   </main>
   <footer class="site-footer shell"><p><bdi>© Imad Chakir</bdi> · Rabat, Morocco</p><a href="#home">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <aside class="portfolio-chat" data-portfolio-chat dir="ltr" hidden>
+    <section class="chatbot-panel" id="portfolio-chat-panel" role="region" aria-labelledby="chatbot-title" hidden>
+      <header class="chatbot-header">
+        <div>
+          <h2 id="chatbot-title">Portfolio assistant</h2>
+          <p class="chatbot-subtitle">Answers based on this portfolio</p>
+        </div>
+        <button class="chatbot-close" type="button" aria-label="Close chat" aria-controls="portfolio-chat-panel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+      <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation">
+        <p class="chatbot-message chatbot-message-assistant" dir="auto">Hi! Ask me about Imad’s experience, projects, skills, education, or fit for a role.</p>
+      </div>
+      <div class="chatbot-suggestions" role="group" aria-label="Suggested questions">
+        <button type="button" data-chat-intent="overview">What is Imad’s background?</button>
+        <button type="button" data-chat-intent="experience">What experience does he have?</button>
+        <button type="button" data-chat-intent="projects">What projects has he built?</button>
+        <button type="button" data-chat-intent="skills">Which technologies does he use?</button>
+      </div>
+      <form class="chatbot-form">
+        <label class="chatbot-visually-hidden" for="chatbot-question">Ask a question</label>
+        <input id="chatbot-question" name="question" type="text" maxlength="300" autocomplete="off" placeholder="Ask about experience, projects, or skills" dir="auto">
+        <button type="submit">Send</button>
+      </form>
+      <nav class="chatbot-links" aria-label="CV and contact">
+        <a href="assets/cv/Imad-Chakir-CV-EN.pdf" download>Download CV</a>
+        <a href="mailto:cimad1812@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/imad-chakir-594895188/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+      </nav>
+    </section>
+    <button class="chatbot-launcher" type="button" aria-expanded="false" aria-controls="portfolio-chat-panel">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.6 8.6 0 0 1-3.6-.8L4 20l1.5-3.7A7.2 7.2 0 0 1 4 11.5 7.7 7.7 0 0 1 12 4a7.7 7.7 0 0 1 8 7.5Z"/><path d="M8 11h8M8 14h5"/></svg>
+      <span>Ask about my portfolio</span>
+    </button>
+  </aside>
+  <script type="application/json" id="chatbot-data">{"welcome":"Hi! Ask me about Imad’s experience, projects, skills, education, or fit for a role.","fallback":"I don’t have a verified answer for that. Try a question about experience, projects, skills, education, or role fit. The CV and contact links are below.","suggestions":["overview","experience","projects","skills"],"intents":[{"id":"greeting","prompt":"Say hello","terms":["hi","hello","hey","good morning","good afternoon","good evening","greetings","bonjour","salut","bonsoir","مرحبا","اهلا","السلام عليكم"],"answer":"Hi! I can help you explore Imad’s background, Oracle experience, projects and tech stacks, skills, education, or role fit. You can also use the CV and contact links below. What would you like to know?"},{"id":"help","prompt":"What can you help with?","terms":["help","what can you do","what can i ask","what should i ask","what can you help with","what can you help me with","suggest a question","aide","que peux tu faire","que puis je demander","quelles questions","مساعدة","ماذا يمكنك ان تفعل","ماذا اسأل","ما الذي يمكنني سؤالك عنه"],"answer":"I can summarize Imad’s background, Oracle and internship experience, project stacks, technical skills, education and languages, or the roles his published experience may fit. I can also point you to the CV and contact links below."},{"id":"thanks","prompt":"Say thanks","terms":["thanks","thank you","thank you so much","appreciate it","much appreciated","merci","merci beaucoup","je vous remercie","شكرا","شكرا جزيلا","ممتن"],"answer":"You’re welcome! If you’d like, ask about Imad’s projects, experience, skills, or role fit."},{"id":"overview","prompt":"What is Imad’s background?","terms":["background","profile","who is imad","tell me about imad","career summary"],"answer":"Imad Chakir is a software engineer based in Rabat, Morocco. He earned an engineering degree in Computer Engineering and Digitalization at EMI (2021–2024). His work focuses on backend and API development, DevOps, observability, and QA automation."},{"id":"experience","prompt":"What experience does he have?","terms":["experience","work history","oracle","anfcc","cheikh zaid","internship","payment api","payment team","observability migration"],"answer":"At Oracle, Imad contributed to APIGW observability work, moving monitoring to internal Telemetry services and building metric pipelines, Grafana dashboards, and alarms. On the Payment team, he worked on validation and gateway APIs, test automation with Selenium, Rest Assured, and Appium, and internal testing tools. Earlier, he interned at Cheikh Zaid Foundation (2022) and ANFCC (2023)."},{"id":"projects","prompt":"What projects has he built?","terms":["project","projects","investment platform","voice weather","weather app","facial expression","emotion recognition","article platform","article sharing","chatbot project","angular","azure","oauth","node red","tailwind","activemq","mosquitto","whisper","tensorflow","keras","opencv","fer2013","react","dialogflow"],"answer":"Selected projects include an investment portfolio platform (Power BI, Python, MySQL, Azure, OAuth, C#, Angular, .NET); a voice-enabled weather app (Angular, Spring, Node-RED, Express, MySQL, Tailwind, Java, ActiveMQ, Mosquitto, Whisper); facial expression recognition (Python, TensorFlow, Keras, OpenCV, FER2013); and an article-sharing platform (React, Spring, MongoDB, Express, Python, Dialogflow)."},{"id":"skills","prompt":"Which technologies does he use?","terms":["skill","skills","tech stack","technology","technologies","programming","backend","devops","testing","qa automation","docker","terraform","grafana","selenium","kafka","python","java","c sharp","c#","javascript","bash","sql","dot net",".net","spring boot","node.js","express","rest api","rest assured","ansible","jenkins","gitlab ci","linux","prometheus","telemetry","appium","postman","postgresql","mongodb","mysql","redis","git","jira","intellij","power bi"],"answer":"His listed skills include Python, Java, C#, JavaScript, and SQL; Spring Boot, .NET, Node.js, Express, and REST APIs; Docker, Terraform, Ansible, Jenkins, GitLab CI/CD, and Linux; Grafana, Prometheus, and Telemetry; and Selenium, Appium, Postman, and API test automation."},{"id":"education","prompt":"What did he study, and which languages does he speak?","terms":["education","degree","emi","study","studied","preparatory classes","languages","language","french","english","arabic"],"answer":"Imad earned an engineering degree in Computer Engineering and Digitalization at EMI in Rabat (2021–2024), after MPSI and MP* preparatory studies (2019–2021). His listed languages are Arabic (native), French (B2), and English (B2)."},{"id":"fit","prompt":"What roles could his experience fit?","terms":["role fit","job fit","suitable role","qa role","devops role","backend role","relevant experience","fit for","hire","hiring"],"answer":"Based on the published experience, relevant areas include backend/API engineering, DevOps and observability, and QA automation. Examples include payment validation and gateway APIs, Oracle Telemetry migration, Grafana dashboards and alarms, and automated API/platform testing. This summary uses listed experience; it does not evaluate a full job description."},{"id":"cv","prompt":"Where can I get his CV?","terms":["cv","resume","résumé","curriculum vitae","download","download cv"],"answer":"Use the Download CV link below. It downloads the CV in the language of this page."},{"id":"contact","prompt":"How can I contact him?","terms":["contact","email","linkedin","reach imad","get in touch","collaborate","opportunity"],"answer":"For a hiring opportunity or collaboration, use the email or LinkedIn links below."}]}</script>
 </body>
 </html>
